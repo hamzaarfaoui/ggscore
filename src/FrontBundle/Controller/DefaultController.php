@@ -14,7 +14,7 @@ class DefaultController extends Controller
         // Specify your translation requirements here:
         $postData = array(
           'fromLang' => "en",
-          'toLang' => "it",
+          'toLang' => "ar",
           'text' => "Let's have some fun!"
         );
         $headers = array(
@@ -29,9 +29,10 @@ class DefaultController extends Controller
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postData));
         $response = curl_exec($ch);
-        dump("Response: ".$response);die();
+        //dump("Response: ".$response);die();
         curl_close($ch);
-        
-        return $this->render('@Front/Default/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $posts = $em->getRepository('BackBundle:Posts')->findAll();
+        return $this->render('@Front/Default/index.html.twig', array('posts' => $posts));
     }
 }

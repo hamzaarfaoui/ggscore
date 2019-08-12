@@ -20,6 +20,12 @@ class Posts
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="FrontBundle\Entity\Langues", cascade={"remove", "persist"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $langue;
 
     /**
      * @var string
@@ -186,5 +192,28 @@ class Posts
     {
         return $this->updatedAt;
     }
-}
 
+    /**
+     * Set langue
+     *
+     * @param \FrontBundle\Entity\Langues $langue
+     *
+     * @return Posts
+     */
+    public function setLangue(\FrontBundle\Entity\Langues $langue = null)
+    {
+        $this->langue = $langue;
+
+        return $this;
+    }
+
+    /**
+     * Get langue
+     *
+     * @return \FrontBundle\Entity\Langues
+     */
+    public function getLangue()
+    {
+        return $this->langue;
+    }
+}

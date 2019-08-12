@@ -1,0 +1,18 @@
+.footer{
+    background-color: #bdbdbd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.img-post{
+    width: 66%;
+}
+txt-img-post{
+    width: 50%;
+}
+

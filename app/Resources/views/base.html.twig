@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>GG Score{% block title %}{% endblock %}</title>
         {% include 'includes/front/css.html.twig' %}
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -10,7 +10,10 @@
     </head>
     <body>
         {% include 'includes/front/navbar.html.twig' %}
-        {% block body %}{% endblock %}
+        <div class="uk-container" style="margin-top: 20px;margin-bottom: 20px;">
+            {% block body %}{% endblock %}
+        </div>
+        {% include 'includes/front/footer.html.twig' %}
         {% include 'includes/front/js.html.twig' %}
         {% block javascripts %}{% endblock %}
     </body>

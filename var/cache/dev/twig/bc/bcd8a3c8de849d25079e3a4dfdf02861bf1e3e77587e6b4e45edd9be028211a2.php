@@ -36,6 +36,10 @@ class __TwigTemplate_cde84fb8a80e692e6d2fd427c144866814f0819dd751a77587a99fae1ff
         echo "<link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/front/uikit/uikit.min.css"), "html", null, true);
         echo "\" />
+<link rel=\"stylesheet\" href=\"";
+        // line 2
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/front/main.css"), "html", null, true);
+        echo "\" />
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -57,7 +61,7 @@ class __TwigTemplate_cde84fb8a80e692e6d2fd427c144866814f0819dd751a77587a99fae1ff
 
     public function getDebugInfo()
     {
-        return array (  36 => 1,);
+        return array (  41 => 2,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -71,6 +75,7 @@ class __TwigTemplate_cde84fb8a80e692e6d2fd427c144866814f0819dd751a77587a99fae1ff
     public function getSourceContext()
     {
         return new Source("<link rel=\"stylesheet\" href=\"{{ asset('assets/front/uikit/uikit.min.css') }}\" />
-", "includes/front/css.html.twig", "/var/www/html/soccer/app/Resources/views/includes/front/css.html.twig");
+<link rel=\"stylesheet\" href=\"{{ asset('assets/front/main.css') }}\" />
+", "includes/front/css.html.twig", "/var/www/html/ggscore/app/Resources/views/includes/front/css.html.twig");
     }
 }

@@ -1,4 +1,16 @@
 {% extends "base.html.twig" %}
 {% block body %}
-    <h1>Acceuil</h1>
+    <div class="uk-child-width-1-2@m" uk-grid>
+    {% set lastPost = posts|last %}
+    <div>
+
+        <div class="uk-inline">
+            <img src="{{ asset('uploads/articles/') }}{{ lastPost.image }}" alt="">
+            <div class="uk-overlay uk-overlay-primary uk-position-bottom txt-img-post">
+                <p>{{ lastPost.title }}</p>
+            </div>
+        </div>
+
+    </div>
+</div>
 {% endblock %}    

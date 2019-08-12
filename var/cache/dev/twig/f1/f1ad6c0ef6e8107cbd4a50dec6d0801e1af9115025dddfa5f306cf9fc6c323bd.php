@@ -33,7 +33,7 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "includes/front/navbar.html.twig"));
 
         // line 1
-        echo "<nav class=\"uk-navbar-container\" uk-navbar>
+        echo "<nav class=\"uk-navbar-container\" uk-navbar style=\"background-color: #bdbdbd;\">
 
     <div class=\"uk-navbar-left\">
 
@@ -101,7 +101,7 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
 
     public function getSourceContext()
     {
-        return new Source("<nav class=\"uk-navbar-container\" uk-navbar>
+        return new Source("<nav class=\"uk-navbar-container\" uk-navbar style=\"background-color: #bdbdbd;\">
 
     <div class=\"uk-navbar-left\">
 
@@ -132,6 +132,6 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
 
     </div>
 
-</nav>", "includes/front/navbar.html.twig", "/var/www/html/soccer/app/Resources/views/includes/front/navbar.html.twig");
+</nav>", "includes/front/navbar.html.twig", "/var/www/html/ggscore/app/Resources/views/includes/front/navbar.html.twig");
     }
 }

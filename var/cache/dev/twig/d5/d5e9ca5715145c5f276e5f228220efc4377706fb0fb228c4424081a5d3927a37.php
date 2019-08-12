@@ -41,7 +41,7 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
 <html>
     <head>
         <meta charset=\"UTF-8\" />
-        <title>";
+        <title>GG Score";
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
@@ -62,15 +62,22 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
         // line 12
         $this->loadTemplate("includes/front/navbar.html.twig", "base.html.twig", 12)->display($context);
         // line 13
-        echo "        ";
-        $this->displayBlock('body', $context, $blocks);
+        echo "        <div class=\"uk-container\" style=\"margin-top: 20px;margin-bottom: 20px;\">
+            ";
         // line 14
-        echo "        ";
-        $this->loadTemplate("includes/front/js.html.twig", "base.html.twig", 14)->display($context);
+        $this->displayBlock('body', $context, $blocks);
         // line 15
+        echo "        </div>
+        ";
+        // line 16
+        $this->loadTemplate("includes/front/footer.html.twig", "base.html.twig", 16)->display($context);
+        // line 17
+        echo "        ";
+        $this->loadTemplate("includes/front/js.html.twig", "base.html.twig", 17)->display($context);
+        // line 18
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 16
+        // line 19
         echo "    </body>
 </html>
 ";
@@ -91,7 +98,6 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Welcome!";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -117,7 +123,7 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
 
     }
 
-    // line 13
+    // line 14
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -134,7 +140,7 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
 
     }
 
-    // line 15
+    // line 18
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -163,7 +169,7 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
 
     public function getDebugInfo()
     {
-        return array (  138 => 15,  121 => 13,  104 => 7,  86 => 5,  74 => 16,  71 => 15,  68 => 14,  65 => 13,  63 => 12,  55 => 8,  52 => 7,  50 => 6,  46 => 5,  40 => 1,);
+        return array (  144 => 18,  127 => 14,  110 => 7,  93 => 5,  81 => 19,  78 => 18,  75 => 17,  73 => 16,  70 => 15,  68 => 14,  65 => 13,  63 => 12,  55 => 8,  52 => 7,  50 => 6,  46 => 5,  40 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -180,7 +186,7 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
 <html>
     <head>
         <meta charset=\"UTF-8\" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>GG Score{% block title %}{% endblock %}</title>
         {% include 'includes/front/css.html.twig' %}
         {% block stylesheets %}{% endblock %}
         <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
@@ -188,11 +194,14 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
     </head>
     <body>
         {% include 'includes/front/navbar.html.twig' %}
-        {% block body %}{% endblock %}
+        <div class=\"uk-container\" style=\"margin-top: 20px;margin-bottom: 20px;\">
+            {% block body %}{% endblock %}
+        </div>
+        {% include 'includes/front/footer.html.twig' %}
         {% include 'includes/front/js.html.twig' %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/var/www/html/soccer/app/Resources/views/base.html.twig");
+", "base.html.twig", "/var/www/html/ggscore/app/Resources/views/base.html.twig");
     }
 }
