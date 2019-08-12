@@ -1,16 +1,17 @@
 {% extends "base.html.twig" %}
 {% block body %}
     <div class="uk-child-width-1-2@m" uk-grid>
-    {% set lastPost = posts|last %}
-    <div>
+        {% for post in posts %}
+            <div>
 
-        <div class="uk-inline">
-            <img src="{{ asset('uploads/articles/') }}{{ lastPost.image }}" alt="">
-            <div class="uk-overlay uk-overlay-primary uk-position-bottom txt-img-post">
-                <p>{{ lastPost.title }}</p>
+                <div class="uk-inline">
+                    <img src="{{ asset('uploads/articles/') }}{{ post.image }}" alt="" style="width: 584px;">
+                    <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                        <p>{{ post.title|length>70?post.title|slice(0, 70)~'...':post.title }}</p>
+                    </div>
+                </div>
+
             </div>
-        </div>
-
+        {% endfor %}
     </div>
-</div>
 {% endblock %}    

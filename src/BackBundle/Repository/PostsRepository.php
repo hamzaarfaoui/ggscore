@@ -10,4 +10,9 @@ namespace BackBundle\Repository;
  */
 class PostsRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function inIndex() {
+        $qb = $this->createQueryBuilder('u');
+        $qb->select('u')->orderBy('u.createdAt', 'DESC');
+        return $qb->getQuery()->getResult();
+    }
 }

@@ -32,7 +32,7 @@ class DefaultController extends Controller
         //dump("Response: ".$response);die();
         curl_close($ch);
         $em = $this->getDoctrine()->getManager();
-        $posts = $em->getRepository('BackBundle:Posts')->findAll();
+        $posts = $em->getRepository('BackBundle:Posts')->inIndex();
         return $this->render('@Front/Default/index.html.twig', array('posts' => $posts));
     }
 }
