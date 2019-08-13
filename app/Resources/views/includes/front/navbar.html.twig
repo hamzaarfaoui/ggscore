@@ -1,4 +1,4 @@
-<nav class="uk-navbar-container" uk-navbar style="background-color: #bdbdbd;">
+<nav class="uk-navbar-container" uk-navbar>
 
     <div class="uk-navbar-left">
 
@@ -18,14 +18,15 @@
                 <a href="#">Parent</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li class="uk-active"><a href="#">Active</a></li>
-                        <li><a href="#">Item</a></li>
-                        <li><a href="#">Item</a></li>
+                        <li class="uk-active"><a href="#" class="text-overlay">Active</a></li>
+                        <li><a href="#" class="text-overlay">Item</a></li>
+                        <li><a href="#" class="text-overlay">Item</a></li>
                     </ul>
                 </div>
             </li>
             <li><a href="#">Item</a></li>
         </ul>
+        {{ render(controller('FrontBundle:Default:navbarItems')) }}
 
     </div>
 

@@ -1,4 +1,16 @@
 {% extends "base.html.twig" %}
+{% block stylesheets %}
+    <style>
+        @media screen and (max-width: 400px){
+            .text-overlay{
+                font-size: 11px;
+            }
+            .uk-overlay{
+                padding: 15px;
+            }
+        }
+    </style>
+{% endblock %}    
 {% block body %}
     <div class="uk-child-width-1-2@m" uk-grid>
         {% for post in posts %}
@@ -7,7 +19,7 @@
                 <div class="uk-inline">
                     <img src="{{ asset('uploads/articles/') }}{{ post.image }}" alt="" style="width: 584px;">
                     <div class="uk-overlay uk-overlay-primary uk-position-bottom">
-                        <p>{{ post.title|length>70?post.title|slice(0, 70)~'...':post.title }}</p>
+                        <p class="text-overlay">{{ post.title|length>70?post.title|slice(0, 70)~'...':post.title }}</p>
                     </div>
                 </div>
 

@@ -1,0 +1,10 @@
+<div class="uk-navbar-item">
+    <form action="javascript:void(0)">
+        <select class="uk-select" name="langue">
+            {% for langue in langues %}
+                <option value="{{ langue.id }}">{{ langue.code }}</option>
+            {% endfor %}
+        </select>
+    </form>
+</div>
+
