@@ -33,3 +33,9 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+    app.security.access_denied_handler:
+        class: UserBundle\Secutity\AccessDeniedHandler
+        
+    redirect.after.login:
+        class: UserBundle\Redirection\AfterLoginRedirection
+        arguments: ['@router']

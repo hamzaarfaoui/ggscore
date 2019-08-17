@@ -1,3 +1,7 @@
+back_posts:
+    resource: "@BackBundle/Controller/PostsController.php"
+    type:     annotation
+
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /user

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Nouvel article</h1>
+
+    {{ form_start(form) }}
+        <div class="uk-margin">
+            {{ form_widget(form.title, {'attr': {'class': 'uk-input', 'required': 'true'},}) }}
+        </div>
+        <div class="uk-margin">
+            {{ form_widget(form.content, {'attr': {'class': 'ckeditor', 'required': 'true'},}) }}
+        </div>
+        
+        <div class="uk-margin">
+            {{ form_widget(form.image, {'attr': {'id': 'kv-explorer'},}) }}
+        </div>
+        <input type="submit" class="uk-button uk-button-primary" value="Enregistrer" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_posts_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
