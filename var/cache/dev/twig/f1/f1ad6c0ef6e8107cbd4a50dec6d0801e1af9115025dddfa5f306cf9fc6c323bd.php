@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* :includes/front:navbar.html.twig */
+/* includes/front/navbar.html.twig */
 class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d779810ec6 extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -27,51 +27,39 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":includes/front:navbar.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "includes/front/navbar.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":includes/front:navbar.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "includes/front/navbar.html.twig"));
 
         // line 1
-        echo "<nav class=\"uk-navbar-container\" uk-navbar>
+        echo "<div uk-sticky=\"sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar\">
+    <nav class=\"uk-navbar-container\" uk-navbar  style=\"position: relative; z-index: 980;\">
 
-    <div class=\"uk-navbar-left\">
+        <div class=\"uk-navbar-left\">
 
-        <ul class=\"uk-navbar-nav\">
-            <li class=\"uk-active\">
-                <a href=\"#\"><img src=\"";
-        // line 7
+            <ul class=\"uk-navbar-nav\">
+                <li class=\"uk-active\">
+                    <a href=\"#\"><img src=\"";
+        // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("ggs.png"), "html", null, true);
         echo "\" /></a>
-            </li>
-        </ul>
+                </li>
+            </ul>
 
-    </div>
+        </div>
 
-    <div class=\"uk-navbar-right\">
+        <div class=\"uk-navbar-right\">
 
-        <ul class=\"uk-navbar-nav\">
-            <li class=\"uk-active\"><a href=\"#\">Active</a></li>
-            <li>
-                <a href=\"#\">Parent</a>
-                <div class=\"uk-navbar-dropdown\">
-                    <ul class=\"uk-nav uk-navbar-dropdown-nav\">
-                        <li class=\"uk-active\"><a href=\"#\" class=\"text-overlay\">Active</a></li>
-                        <li><a href=\"#\" class=\"text-overlay\">Item</a></li>
-                        <li><a href=\"#\" class=\"text-overlay\">Item</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href=\"#\">Item</a></li>
-        </ul>
-        ";
-        // line 29
-        echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("FrontBundle:Default:navbarItems"));
+            ";
+        // line 30
+        echo "            ";
+        // line 31
         echo "
+        </div>
 
-    </div>
-
-</nav>";
+    </nav>
+</div>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -82,7 +70,7 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
 
     public function getTemplateName()
     {
-        return ":includes/front:navbar.html.twig";
+        return "includes/front/navbar.html.twig";
     }
 
     public function isTraitable()
@@ -92,7 +80,7 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
 
     public function getDebugInfo()
     {
-        return array (  69 => 29,  44 => 7,  36 => 1,);
+        return array (  58 => 31,  56 => 30,  45 => 8,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -105,38 +93,40 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
 
     public function getSourceContext()
     {
-        return new Source("<nav class=\"uk-navbar-container\" uk-navbar>
+        return new Source("<div uk-sticky=\"sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar\">
+    <nav class=\"uk-navbar-container\" uk-navbar  style=\"position: relative; z-index: 980;\">
 
-    <div class=\"uk-navbar-left\">
+        <div class=\"uk-navbar-left\">
 
-        <ul class=\"uk-navbar-nav\">
-            <li class=\"uk-active\">
-                <a href=\"#\"><img src=\"{{ asset('ggs.png') }}\" /></a>
-            </li>
-        </ul>
+            <ul class=\"uk-navbar-nav\">
+                <li class=\"uk-active\">
+                    <a href=\"#\"><img src=\"{{ asset('ggs.png') }}\" /></a>
+                </li>
+            </ul>
 
-    </div>
+        </div>
 
-    <div class=\"uk-navbar-right\">
+        <div class=\"uk-navbar-right\">
 
-        <ul class=\"uk-navbar-nav\">
-            <li class=\"uk-active\"><a href=\"#\">Active</a></li>
-            <li>
-                <a href=\"#\">Parent</a>
-                <div class=\"uk-navbar-dropdown\">
-                    <ul class=\"uk-nav uk-navbar-dropdown-nav\">
-                        <li class=\"uk-active\"><a href=\"#\" class=\"text-overlay\">Active</a></li>
-                        <li><a href=\"#\" class=\"text-overlay\">Item</a></li>
-                        <li><a href=\"#\" class=\"text-overlay\">Item</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href=\"#\">Item</a></li>
-        </ul>
-        {{ render(controller('FrontBundle:Default:navbarItems')) }}
+            {#<ul class=\"uk-navbar-nav\">
+                <li class=\"uk-active\"><a href=\"#\">Active</a></li>
+                <li>
+                    <a href=\"#\">Parent</a>
+                    <div class=\"uk-navbar-dropdown\">
+                        <ul class=\"uk-nav uk-navbar-dropdown-nav\">
+                            <li class=\"uk-active\"><a href=\"#\" class=\"text-overlay\">Active</a></li>
+                            <li><a href=\"#\" class=\"text-overlay\">Item</a></li>
+                            <li><a href=\"#\" class=\"text-overlay\">Item</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href=\"#\">Item</a></li>
+            </ul>#}
+            {#{{ render(controller('FrontBundle:Default:navbarItems')) }}#}
 
-    </div>
+        </div>
 
-</nav>", ":includes/front:navbar.html.twig", "/var/www/html/ggscore/app/Resources/views/includes/front/navbar.html.twig");
+    </nav>
+</div>", "includes/front/navbar.html.twig", "/var/www/html/ggscore/app/Resources/views/includes/front/navbar.html.twig");
     }
 }

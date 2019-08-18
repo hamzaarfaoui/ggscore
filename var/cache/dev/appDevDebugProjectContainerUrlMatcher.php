@@ -145,6 +145,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // front_posts_show
+        if (preg_match('#^/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'front_posts_show']), array (  '_controller' => 'FrontBundle\\Controller\\DefaultController::showArticleAction',));
+        }
+
         // user_homepage
         if ('/user' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'user_homepage',);

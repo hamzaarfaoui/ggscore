@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/var/www/html/ggscore/app/Resources/views/posts/show.html.twig</file>
             <file>file:/var/www/html/ggscore/app/Resources/views/posts/new.html.twig</file>
-            <file>file:/var/www/html/ggscore/app/config/config.yml</file>
-            <file>file:/var/www/html/ggscore/src/BackBundle/Resources/config/routing.yml</file>
-            <file>file:/var/www/html/ggscore/app/config/services.yml</file>
-            <file>file:/var/www/html/ggscore/app/config/security.yml</file>
-            <file>file:/var/www/html/ggscore/app/Resources/FOSUserBundle/views/layout.html.twig</file>
+            <file>file:/var/www/html/ggscore/app/Resources/views/includes/front/js.html.twig</file>
             <file>file:/var/www/html/ggscore/src/FrontBundle/Resources/views/Default/index.html.twig</file>
             <file>file:/var/www/html/ggscore/app/Resources/views/base.html.twig</file>
             <file>file:/var/www/html/ggscore/app/Resources/views/posts/index.html.twig</file>
