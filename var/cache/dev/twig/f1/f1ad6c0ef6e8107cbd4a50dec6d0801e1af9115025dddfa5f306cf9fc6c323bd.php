@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* includes/front/navbar.html.twig */
+/* :includes/front:navbar.html.twig */
 class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d779810ec6 extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -27,21 +27,23 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "includes/front/navbar.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":includes/front:navbar.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "includes/front/navbar.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":includes/front:navbar.html.twig"));
 
         // line 1
         echo "<div uk-sticky=\"sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar\">
-    <nav class=\"uk-navbar-container\" uk-navbar  style=\"position: relative; z-index: 980;\">
+    <nav class=\"uk-navbar-container\" uk-navbar  style=\"position: relative; z-index: 980;background-color: #212121;height: 50px;\">
 
         <div class=\"uk-navbar-left\">
 
             <ul class=\"uk-navbar-nav\">
                 <li class=\"uk-active\">
-                    <a href=\"#\"><img src=\"";
+                    <a href=\"";
         // line 8
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("front_homepage");
+        echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("ggs.png"), "html", null, true);
         echo "\" /></a>
                 </li>
@@ -70,7 +72,7 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
 
     public function getTemplateName()
     {
-        return "includes/front/navbar.html.twig";
+        return ":includes/front:navbar.html.twig";
     }
 
     public function isTraitable()
@@ -80,7 +82,7 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
 
     public function getDebugInfo()
     {
-        return array (  58 => 31,  56 => 30,  45 => 8,  36 => 1,);
+        return array (  60 => 31,  58 => 30,  45 => 8,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -94,13 +96,13 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
     public function getSourceContext()
     {
         return new Source("<div uk-sticky=\"sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar\">
-    <nav class=\"uk-navbar-container\" uk-navbar  style=\"position: relative; z-index: 980;\">
+    <nav class=\"uk-navbar-container\" uk-navbar  style=\"position: relative; z-index: 980;background-color: #212121;height: 50px;\">
 
         <div class=\"uk-navbar-left\">
 
             <ul class=\"uk-navbar-nav\">
                 <li class=\"uk-active\">
-                    <a href=\"#\"><img src=\"{{ asset('ggs.png') }}\" /></a>
+                    <a href=\"{{ path('front_homepage') }}\"><img src=\"{{ asset('ggs.png') }}\" /></a>
                 </li>
             </ul>
 
@@ -127,6 +129,6 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
         </div>
 
     </nav>
-</div>", "includes/front/navbar.html.twig", "/var/www/html/ggscore/app/Resources/views/includes/front/navbar.html.twig");
+</div>", ":includes/front:navbar.html.twig", "/var/www/html/ggscore/app/Resources/views/includes/front/navbar.html.twig");
     }
 }

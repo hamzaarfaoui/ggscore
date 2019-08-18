@@ -1,7 +1,9 @@
 <script src="{{ asset('assets/front/uikit/uikit.min.js')}}"></script>
 <script src="{{ asset('assets/front/uikit/uikit-icons.min.js')}}"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="{{ asset('template/temp/assets/extra-libs/DataTables/datatables.min.js')}}"></script>
+<script src="{{ asset('assets/back/datatable/jquery-3.3.1.js')}}"></script>
+<script src="{{ asset('assets/back/datatable/jquery.dataTables.min.js')}}"></script>
+<script src="{{ asset('assets/back/datatable/dataTables.uikit.min.js')}}"></script>
 <script src="{{ asset('template/template/js/fileinput.js')}}" type="text/javascript"></script>
     <script src="{{ asset('template/template/js/locales/fr.js')}}" type="text/javascript"></script>
     <script src="{{ asset('template/template/themes/explorer-fa/theme.js')}}" type="text/javascript"></script>
@@ -35,11 +37,11 @@
                    "language": {
                        "zeroRecords": "Aucun résultat trouvé",
                        "infoEmpty": "Aucune données trouvé",
-                       "lengthMenu": "Afficher _MENU_ utilisateurs",
+                       "lengthMenu": "Afficher _MENU_ lignes",
                        "infoFiltered": "(filtered from _MAX_ total records)",
                        "loadingRecords": "Chargement...",
                        "processing": "Processing...",
-                       "info": "Affichage de _START_ à _END_ sur _TOTAL_ PayBox",
+                       "info": "Affichage de _START_ à _END_ sur _TOTAL_ lignes",
                        "paginate": {
                            "first": "Premier",
                            "last": "Dérnier",

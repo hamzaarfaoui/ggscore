@@ -33,11 +33,11 @@ class __TwigTemplate_be8a3f3ba262dfb1f7d3a530bd027b63d4d88bd2488493fdd783a92868b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":includes/front:footer.html.twig"));
 
         // line 1
-        echo "<div class=\"footer\">
-    <a href=\"\" uk-icon=\"icon: facebook\"></a>
-    <a href=\"\" uk-icon=\"icon: instagram\"></a>
-    <a href=\"\" uk-icon=\"icon: pinterest\"></a>
-    <a href=\"\" uk-icon=\"icon: twitter\"></a>
+        echo "<div class=\"footer\" style=\"background-color: #212121;\">
+    <a href=\"\" uk-icon=\"icon: facebook\" style=\"color: #FFF;\"></a>
+    <a href=\"\" uk-icon=\"icon: instagram\" style=\"color: #FFF;\"></a>
+    <a href=\"\" uk-icon=\"icon: pinterest\" style=\"color: #FFF;\"></a>
+    <a href=\"\" uk-icon=\"icon: twitter\" style=\"color: #FFF;\"></a>
 </div>
 ";
         
@@ -68,11 +68,11 @@ class __TwigTemplate_be8a3f3ba262dfb1f7d3a530bd027b63d4d88bd2488493fdd783a92868b
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"footer\">
-    <a href=\"\" uk-icon=\"icon: facebook\"></a>
-    <a href=\"\" uk-icon=\"icon: instagram\"></a>
-    <a href=\"\" uk-icon=\"icon: pinterest\"></a>
-    <a href=\"\" uk-icon=\"icon: twitter\"></a>
+        return new Source("<div class=\"footer\" style=\"background-color: #212121;\">
+    <a href=\"\" uk-icon=\"icon: facebook\" style=\"color: #FFF;\"></a>
+    <a href=\"\" uk-icon=\"icon: instagram\" style=\"color: #FFF;\"></a>
+    <a href=\"\" uk-icon=\"icon: pinterest\" style=\"color: #FFF;\"></a>
+    <a href=\"\" uk-icon=\"icon: twitter\" style=\"color: #FFF;\"></a>
 </div>
 ", ":includes/front:footer.html.twig", "/var/www/html/ggscore/app/Resources/views/includes/front/footer.html.twig");
     }

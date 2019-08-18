@@ -61,33 +61,48 @@ class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60
 
     ";
         // line 6
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["edit_form"] ?? $this->getContext($context, "edit_form")), 'form_start');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
         echo "
-        ";
-        // line 7
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(($context["edit_form"] ?? $this->getContext($context, "edit_form")), 'widget');
+        <div class=\"uk-margin\">
+            ";
+        // line 8
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "title", []), 'widget', ["attr" => ["class" => "uk-input", "required" => "true"]]);
         echo "
-        <input type=\"submit\" value=\"Edit\" />
+        </div>
+        <div class=\"uk-margin\">
+            ";
+        // line 11
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "content", []), 'widget', ["attr" => ["class" => "ckeditor", "required" => "true"]]);
+        echo "
+        </div>
+        
+        <div class=\"uk-margin\">
+            ";
+        // line 15
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "image", []), 'widget', ["attr" => ["id" => "kv-explorer"]]);
+        echo "
+        </div>
+        <input type=\"submit\" class=\"uk-button uk-button-primary\" value=\"Enregistrer\" />
     ";
-        // line 9
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["edit_form"] ?? $this->getContext($context, "edit_form")), 'form_end');
+        // line 18
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
 
     <ul>
         <li>
-            <a href=\"";
-        // line 13
+            <a class=\"uk-button uk-button-primary\" href=\"";
+        // line 22
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_index");
         echo "\">Back to the list</a>
         </li>
         <li>
             ";
-        // line 16
+        // line 25
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_start');
         echo "
-                <input type=\"submit\" value=\"Delete\">
+                <input class=\"uk-button uk-button-danger\" type=\"submit\" value=\"Delete\">
             ";
-        // line 18
+        // line 27
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_end');
         echo "
         </li>
@@ -113,7 +128,7 @@ class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60
 
     public function getDebugInfo()
     {
-        return array (  91 => 18,  86 => 16,  80 => 13,  73 => 9,  68 => 7,  64 => 6,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  106 => 27,  101 => 25,  95 => 22,  88 => 18,  82 => 15,  75 => 11,  69 => 8,  64 => 6,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -131,18 +146,27 @@ class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60
 {% block body %}
     <h1>Post edit</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type=\"submit\" value=\"Edit\" />
-    {{ form_end(edit_form) }}
+    {{ form_start(form) }}
+        <div class=\"uk-margin\">
+            {{ form_widget(form.title, {'attr': {'class': 'uk-input', 'required': 'true'},}) }}
+        </div>
+        <div class=\"uk-margin\">
+            {{ form_widget(form.content, {'attr': {'class': 'ckeditor', 'required': 'true'},}) }}
+        </div>
+        
+        <div class=\"uk-margin\">
+            {{ form_widget(form.image, {'attr': {'id': 'kv-explorer'},}) }}
+        </div>
+        <input type=\"submit\" class=\"uk-button uk-button-primary\" value=\"Enregistrer\" />
+    {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href=\"{{ path('admin_posts_index') }}\">Back to the list</a>
+            <a class=\"uk-button uk-button-primary\" href=\"{{ path('admin_posts_index') }}\">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type=\"submit\" value=\"Delete\">
+                <input class=\"uk-button uk-button-danger\" type=\"submit\" value=\"Delete\">
             {{ form_end(delete_form) }}
         </li>
     </ul>

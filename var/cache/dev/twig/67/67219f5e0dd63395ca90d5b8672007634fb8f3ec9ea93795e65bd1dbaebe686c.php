@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* posts/new.html.twig */
+/* :posts:new.html.twig */
 class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c94d16 extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -32,12 +32,12 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/new.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:new.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/new.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:new.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "posts/new.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":posts:new.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -93,7 +93,7 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
             <a href=\"";
         // line 22
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_index");
-        echo "\">Back to the list</a>
+        echo "\" class=\"uk-button uk-button-default\">Back to the list</a>
         </li>
     </ul>
 ";
@@ -107,7 +107,7 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
 
     public function getTemplateName()
     {
-        return "posts/new.html.twig";
+        return ":posts:new.html.twig";
     }
 
     public function isTraitable()
@@ -151,10 +151,10 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
 
     <ul>
         <li>
-            <a href=\"{{ path('admin_posts_index') }}\">Back to the list</a>
+            <a href=\"{{ path('admin_posts_index') }}\" class=\"uk-button uk-button-default\">Back to the list</a>
         </li>
     </ul>
 {% endblock %}
-", "posts/new.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/new.html.twig");
+", ":posts:new.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/new.html.twig");
     }
 }

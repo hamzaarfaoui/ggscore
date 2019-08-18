@@ -2,12 +2,11 @@
 
 namespace BackBundle\Controller;
 
-
+use BackBundle\Entity\Posts;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Request;
-use BackBundle\Entity\Posts;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * Post controller.
@@ -115,13 +114,40 @@ class PostsController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $em = $this->getDoctrine()->getManager();
+            $imageArticle = $editForm['image']->getData();
+            // this condition is needed because the 'brochure' field is not required
+            // so the PDF file must be processed only when a file is uploaded
+            if ($imageArticle) {
+                $originalFilename = pathinfo($imageArticle->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageArticle->guessExtension();
 
+                // Move the file to the directory where brochures are stored
+                try {
+                    $imageArticle->move(
+                        $this->getParameter('images_articles'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $post->setImage($newFilename);
+                
+            }
+            $post->setUpdatedAt(new \DateTime('now'));
+            $em->persist($post);
+            $em->flush();
             return $this->redirectToRoute('admin_posts_edit', array('id' => $post->getId()));
         }
 
         return $this->render('posts/edit.html.twig', array(
             'post' => $post,
-            'edit_form' => $editForm->createView(),
+            'form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }

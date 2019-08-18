@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* @Front/Default/index.html.twig */
+/* FrontBundle:Default:index.html.twig */
 class __TwigTemplate_5dac746632b41bd793669436e9b8eeb72f7b02bc4650084ec3c80f2539fd2b5f extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -33,12 +33,12 @@ class __TwigTemplate_5dac746632b41bd793669436e9b8eeb72f7b02bc4650084ec3c80f2539f
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@Front/Default/index.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "FrontBundle:Default:index.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@Front/Default/index.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "FrontBundle:Default:index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "@Front/Default/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "FrontBundle:Default:index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -141,7 +141,7 @@ class __TwigTemplate_5dac746632b41bd793669436e9b8eeb72f7b02bc4650084ec3c80f2539f
 
     public function getTemplateName()
     {
-        return "@Front/Default/index.html.twig";
+        return "FrontBundle:Default:index.html.twig";
     }
 
     public function isTraitable()
@@ -199,6 +199,6 @@ class __TwigTemplate_5dac746632b41bd793669436e9b8eeb72f7b02bc4650084ec3c80f2539f
         </div>
     </div>
 {% endblock %}    
-", "@Front/Default/index.html.twig", "/var/www/html/ggscore/src/FrontBundle/Resources/views/Default/index.html.twig");
+", "FrontBundle:Default:index.html.twig", "/var/www/html/ggscore/src/FrontBundle/Resources/views/Default/index.html.twig");
     }
 }

@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* posts/show.html.twig */
+/* :posts:show.html.twig */
 class __TwigTemplate_23bb7f80d4f22b07a26cc73d3c24462e1f565e0da0752eb1dc7b1d773468310b extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -32,12 +32,12 @@ class __TwigTemplate_23bb7f80d4f22b07a26cc73d3c24462e1f565e0da0752eb1dc7b1d77346
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/show.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:show.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/show.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:show.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "posts/show.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":posts:show.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -146,7 +146,7 @@ class __TwigTemplate_23bb7f80d4f22b07a26cc73d3c24462e1f565e0da0752eb1dc7b1d77346
 
     public function getTemplateName()
     {
-        return "posts/show.html.twig";
+        return ":posts:show.html.twig";
     }
 
     public function isTraitable()
@@ -217,6 +217,6 @@ class __TwigTemplate_23bb7f80d4f22b07a26cc73d3c24462e1f565e0da0752eb1dc7b1d77346
         </li>
     </ul>
 {% endblock %}
-", "posts/show.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/show.html.twig");
+", ":posts:show.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/show.html.twig");
     }
 }

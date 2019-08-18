@@ -2,16 +2,17 @@
 
 namespace FrontBundle\Controller;
 
+use BackBundle\Entity\Posts;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
-use BackBundle\Entity\Posts;
+
 
 /**
  * Post controller.
  *
- * @Route("")
+ * @Route("/")
  */
 class DefaultController extends Controller
 {
@@ -19,7 +20,7 @@ class DefaultController extends Controller
     {
         $session = $request->getSession();
         
-        if (!$session->has('langue')) $session->set('langue','ar');
+        
         $em = $this->getDoctrine()->getManager();
         $posts = $em->getRepository('BackBundle:Posts')->inIndex();
         return $this->render('@Front/Default/index.html.twig', array('posts' => $posts));
@@ -28,7 +29,7 @@ class DefaultController extends Controller
     /**
      * Finds and displays a post entity.
      *
-     * @Route("/{id}", name="front_posts_show")
+     * @Route("/posts/{id}", name="front_posts_show")
      * @Method("GET")
      */
     public function showArticleAction(Posts $post)
@@ -38,10 +39,10 @@ class DefaultController extends Controller
         ));
     }
     
-    public function navbarItemsAction(Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $langues = $em->getRepository('FrontBundle:Langues')->findAll();
-        return $this->render('@Front/Default/navItems.html.twig', array('langues' => $langues));
-    }
+//    public function navbarItemsAction(Request $request)
+//    {
+//        $em = $this->getDoctrine()->getManager();
+//        $langues = $em->getRepository('FrontBundle:Langues')->findAll();
+//        return $this->render('@Front/Default/navItems.html.twig', array('langues' => $langues));
+//    }
 }

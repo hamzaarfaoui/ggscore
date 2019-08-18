@@ -163,4 +163,5 @@
   ':posts:new.html.twig' => __DIR__.'/../../../app/Resources/views/posts/new.html.twig',
   ':posts:edit.html.twig' => __DIR__.'/../../../app/Resources/views/posts/edit.html.twig',
   ':posts:show.html.twig' => __DIR__.'/../../../app/Resources/views/posts/show.html.twig',
+  ':posts:showInFront.html.twig' => __DIR__.'/../../../app/Resources/views/posts/showInFront.html.twig',
 );

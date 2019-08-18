@@ -43,26 +43,34 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
 <script src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
 <script src=\"";
         // line 4
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("template/temp/assets/extra-libs/DataTables/datatables.min.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/back/datatable/jquery-3.3.1.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
         // line 5
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/back/datatable/jquery.dataTables.min.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/back/datatable/dataTables.uikit.min.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 7
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("template/template/js/fileinput.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 6
+        // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("template/template/js/locales/fr.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 7
+        // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("template/template/themes/explorer-fa/theme.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 8
+        // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("template/template/js/plugins/canvas-to-blob.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 9
+        // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("template/ckeditor/ckeditor.js"), "html", null, true);
         echo "\"></script>
     <script>
@@ -93,11 +101,11 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
                    \"language\": {
                        \"zeroRecords\": \"Aucun résultat trouvé\",
                        \"infoEmpty\": \"Aucune données trouvé\",
-                       \"lengthMenu\": \"Afficher _MENU_ utilisateurs\",
+                       \"lengthMenu\": \"Afficher _MENU_ lignes\",
                        \"infoFiltered\": \"(filtered from _MAX_ total records)\",
                        \"loadingRecords\": \"Chargement...\",
                        \"processing\": \"Processing...\",
-                       \"info\": \"Affichage de _START_ à _END_ sur _TOTAL_ PayBox\",
+                       \"info\": \"Affichage de _START_ à _END_ sur _TOTAL_ lignes\",
                        \"paginate\": {
                            \"first\": \"Premier\",
                            \"last\": \"Dérnier\",
@@ -131,7 +139,7 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
 
     public function getDebugInfo()
     {
-        return array (  66 => 9,  62 => 8,  58 => 7,  54 => 6,  50 => 5,  46 => 4,  41 => 2,  36 => 1,);
+        return array (  74 => 11,  70 => 10,  66 => 9,  62 => 8,  58 => 7,  54 => 6,  50 => 5,  46 => 4,  41 => 2,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -147,7 +155,9 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
         return new Source("<script src=\"{{ asset('assets/front/uikit/uikit.min.js')}}\"></script>
 <script src=\"{{ asset('assets/front/uikit/uikit-icons.min.js')}}\"></script>
 <script src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
-<script src=\"{{ asset('template/temp/assets/extra-libs/DataTables/datatables.min.js')}}\"></script>
+<script src=\"{{ asset('assets/back/datatable/jquery-3.3.1.js')}}\"></script>
+<script src=\"{{ asset('assets/back/datatable/jquery.dataTables.min.js')}}\"></script>
+<script src=\"{{ asset('assets/back/datatable/dataTables.uikit.min.js')}}\"></script>
 <script src=\"{{ asset('template/template/js/fileinput.js')}}\" type=\"text/javascript\"></script>
     <script src=\"{{ asset('template/template/js/locales/fr.js')}}\" type=\"text/javascript\"></script>
     <script src=\"{{ asset('template/template/themes/explorer-fa/theme.js')}}\" type=\"text/javascript\"></script>
@@ -181,11 +191,11 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
                    \"language\": {
                        \"zeroRecords\": \"Aucun résultat trouvé\",
                        \"infoEmpty\": \"Aucune données trouvé\",
-                       \"lengthMenu\": \"Afficher _MENU_ utilisateurs\",
+                       \"lengthMenu\": \"Afficher _MENU_ lignes\",
                        \"infoFiltered\": \"(filtered from _MAX_ total records)\",
                        \"loadingRecords\": \"Chargement...\",
                        \"processing\": \"Processing...\",
-                       \"info\": \"Affichage de _START_ à _END_ sur _TOTAL_ PayBox\",
+                       \"info\": \"Affichage de _START_ à _END_ sur _TOTAL_ lignes\",
                        \"paginate\": {
                            \"first\": \"Premier\",
                            \"last\": \"Dérnier\",
