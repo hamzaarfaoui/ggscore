@@ -14,7 +14,7 @@ class PostsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('content')->add('image', FileType::class, array('data_class' => null, 'required'=> true));
+        $builder->add('title')->add('content')->add('image', FileType::class, array('data_class' => null, 'required'=> false));
     }/**
      * {@inheritdoc}
      */
