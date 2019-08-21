@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Level creation</h1>
+    <div class="uk-position-left">
+    <a href="{{ path('admin_competitions_show', { 'id': competion.id }) }}" class="uk-button uk-button-secondary">Compétition</a>
+    </div>
+    {{ form_start(form) }}
+        <b>Titre :</b>
+        {{ form_widget(form.title, {'attr': {'class': 'uk-input', 'required': 'true'},}) }}
+    <b>Contenu :</b>
+    {{ form_widget(form.content, {'attr': {'class': 'ckeditor', 'required': 'true'},}) }}<br><br>
+        <input type="submit" value="Enregistrer" class="uk-button uk-button-primary" /> 
+        <a href="{{ path('admin_competitions_show', {id:competion.id}) }}"  class="uk-button uk-button-default">Liste des phases</a>
+    {{ form_end(form) }}
+{% endblock %}

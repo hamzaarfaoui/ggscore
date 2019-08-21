@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="uk-child-width-1-1@m" uk-grid>
+    <h1>{{ competion.title }}</h1>
+    <div class="uk-inline">
+        <div class="uk-position-left">
+    <a href="{{ path('admin_competitions_index') }}" class="uk-button uk-button-default">Listes des copétitions</a>
+    </div>
+    <div class="uk-position-right">
+        <a href="{{ path('admin_levels_new', {id:competion.id}) }}" class="uk-button uk-button-default">Créer une phase</a>
+    </div>
+    </div>
+    <br><br><br>
+    <table class="uk-table uk-table-striped" id="zero_config">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for level in competion.levels %}
+                <tr>
+                    <td>{{ level.id }}</td>
+                    <td>{{ level.title }}</td>
+                    <td>
+                        <div class="uk-button-group">
+                              <a href="{{ path('admin_levels_show', { 'id': level.id }) }}" class="uk-button uk-button-secondary" uk-icon="icon: search"></a>
+                                <a href="{{ path('admin_levels_edit', { 'id': level.id }) }}" class="uk-button uk-button-primary" uk-icon="icon: pencil"></a>
+                        </div>  
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_competitions_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_competitions_edit', { 'id': competion.id }) }}">Edit</a>
+        </li>
+        {% if competion.levels|length == 0 %}
+            <li>
+                {{ form_start(delete_form) }}
+                    <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        {% endif %}
+    </ul>
+    </div>
+{% endblock %}

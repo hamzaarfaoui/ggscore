@@ -107,40 +107,109 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/admin/posts')) {
-            // admin_posts_index
-            if ('/admin/posts' === $trimmedPathinfo) {
-                $ret = array (  '_controller' => 'BackBundle\\Controller\\PostsController::indexAction',  '_route' => 'admin_posts_index',);
-                if ('/' === substr($pathinfo, -1)) {
-                    // no-op
-                } elseif ('GET' !== $canonicalMethod) {
-                    goto not_admin_posts_index;
-                } else {
-                    return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_posts_index'));
+        elseif (0 === strpos($pathinfo, '/admin')) {
+            if (0 === strpos($pathinfo, '/admin/levels')) {
+                // admin_levels_index
+                if (preg_match('#^/admin/levels/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_levels_index']), array (  '_controller' => 'BackBundle\\Controller\\LevelsController::indexAction',));
                 }
 
-                return $ret;
-            }
-            not_admin_posts_index:
+                // admin_levels_new
+                if (0 === strpos($pathinfo, '/admin/levels/new') && preg_match('#^/admin/levels/new/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_levels_new']), array (  '_controller' => 'BackBundle\\Controller\\LevelsController::newAction',));
+                }
 
-            // admin_posts_new
-            if ('/admin/posts/new' === $pathinfo) {
-                return array (  '_controller' => 'BackBundle\\Controller\\PostsController::newAction',  '_route' => 'admin_posts_new',);
+                // admin_levels_show
+                if (preg_match('#^/admin/levels/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_levels_show']), array (  '_controller' => 'BackBundle\\Controller\\LevelsController::showAction',));
+                }
+
+                // admin_levels_edit
+                if (preg_match('#^/admin/levels/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_levels_edit']), array (  '_controller' => 'BackBundle\\Controller\\LevelsController::editAction',));
+                }
+
+                // admin_levels_delete
+                if (preg_match('#^/admin/levels/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_levels_delete']), array (  '_controller' => 'BackBundle\\Controller\\LevelsController::deleteAction',));
+                }
+
             }
 
-            // admin_posts_show
-            if (preg_match('#^/admin/posts/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_posts_show']), array (  '_controller' => 'BackBundle\\Controller\\PostsController::showAction',));
+            elseif (0 === strpos($pathinfo, '/admin/competitions')) {
+                // admin_competitions_index
+                if ('/admin/competitions' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'BackBundle\\Controller\\CompetionsController::indexAction',  '_route' => 'admin_competitions_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_admin_competitions_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_competitions_index'));
+                    }
+
+                    return $ret;
+                }
+                not_admin_competitions_index:
+
+                // admin_competitions_new
+                if ('/admin/competitions/new' === $pathinfo) {
+                    return array (  '_controller' => 'BackBundle\\Controller\\CompetionsController::newAction',  '_route' => 'admin_competitions_new',);
+                }
+
+                // admin_competitions_show
+                if (preg_match('#^/admin/competitions/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_competitions_show']), array (  '_controller' => 'BackBundle\\Controller\\CompetionsController::showAction',));
+                }
+
+                // admin_competitions_edit
+                if (preg_match('#^/admin/competitions/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_competitions_edit']), array (  '_controller' => 'BackBundle\\Controller\\CompetionsController::editAction',));
+                }
+
+                // admin_competitions_delete
+                if (preg_match('#^/admin/competitions/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_competitions_delete']), array (  '_controller' => 'BackBundle\\Controller\\CompetionsController::deleteAction',));
+                }
+
             }
 
-            // admin_posts_edit
-            if (preg_match('#^/admin/posts/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_posts_edit']), array (  '_controller' => 'BackBundle\\Controller\\PostsController::editAction',));
-            }
+            elseif (0 === strpos($pathinfo, '/admin/posts')) {
+                // admin_posts_index
+                if ('/admin/posts' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'BackBundle\\Controller\\PostsController::indexAction',  '_route' => 'admin_posts_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_admin_posts_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'admin_posts_index'));
+                    }
 
-            // admin_posts_delete
-            if (preg_match('#^/admin/posts/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_posts_delete']), array (  '_controller' => 'BackBundle\\Controller\\PostsController::deleteAction',));
+                    return $ret;
+                }
+                not_admin_posts_index:
+
+                // admin_posts_new
+                if ('/admin/posts/new' === $pathinfo) {
+                    return array (  '_controller' => 'BackBundle\\Controller\\PostsController::newAction',  '_route' => 'admin_posts_new',);
+                }
+
+                // admin_posts_show
+                if (preg_match('#^/admin/posts/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_posts_show']), array (  '_controller' => 'BackBundle\\Controller\\PostsController::showAction',));
+                }
+
+                // admin_posts_edit
+                if (preg_match('#^/admin/posts/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_posts_edit']), array (  '_controller' => 'BackBundle\\Controller\\PostsController::editAction',));
+                }
+
+                // admin_posts_delete
+                if (preg_match('#^/admin/posts/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_posts_delete']), array (  '_controller' => 'BackBundle\\Controller\\PostsController::deleteAction',));
+                }
+
             }
 
         }

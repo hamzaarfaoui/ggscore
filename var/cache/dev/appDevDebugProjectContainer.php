@@ -16,6 +16,6 @@ if (!\class_exists(appDevDebugProjectContainer::class, false)) {
 
 return new \ContainerKdskffx\appDevDebugProjectContainer([
     'container.build_hash' => 'Kdskffx',
-    'container.build_id' => 'e17047af',
-    'container.build_time' => 1566144646,
+    'container.build_id' => 'b9b3b6aa',
+    'container.build_time' => 1566328291,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerKdskffx');

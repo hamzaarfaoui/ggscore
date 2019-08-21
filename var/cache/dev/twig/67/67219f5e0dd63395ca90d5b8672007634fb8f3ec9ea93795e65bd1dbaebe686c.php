@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* :posts:new.html.twig */
+/* posts/new.html.twig */
 class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c94d16 extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -32,12 +32,12 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:new.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/new.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:new.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/new.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", ":posts:new.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "posts/new.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -57,45 +57,43 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Nouvel article</h1>
-
+        echo "    <div class=\"uk-margin\">
+    <h1>Nouvel article</h1>
+    
     ";
-        // line 6
+        // line 7
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
         echo "
         <div class=\"uk-margin\">
             ";
-        // line 8
+        // line 9
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "title", []), 'widget', ["attr" => ["class" => "uk-input", "required" => "true"]]);
         echo "
         </div>
         <div class=\"uk-margin\">
             ";
-        // line 11
+        // line 12
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "content", []), 'widget', ["attr" => ["class" => "ckeditor", "required" => "true"]]);
         echo "
         </div>
         
         <div class=\"uk-margin\">
             ";
-        // line 15
+        // line 16
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "image", []), 'widget', ["attr" => ["id" => "kv-explorer"]]);
         echo "
         </div>
         <input type=\"submit\" class=\"uk-button uk-button-primary\" value=\"Enregistrer\" />
+        <a href=\"";
+        // line 19
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_index");
+        echo "\" class=\"uk-button uk-button-default\">Liste des articles</a>
     ";
-        // line 18
+        // line 20
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
-
-    <ul>
-        <li>
-            <a href=\"";
-        // line 22
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_index");
-        echo "\" class=\"uk-button uk-button-default\">Back to the list</a>
-        </li>
-    </ul>
+    <br><br><br>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -107,7 +105,7 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
 
     public function getTemplateName()
     {
-        return ":posts:new.html.twig";
+        return "posts/new.html.twig";
     }
 
     public function isTraitable()
@@ -117,7 +115,7 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
 
     public function getDebugInfo()
     {
-        return array (  95 => 22,  88 => 18,  82 => 15,  75 => 11,  69 => 8,  64 => 6,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  93 => 20,  89 => 19,  83 => 16,  76 => 12,  70 => 9,  65 => 7,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -133,8 +131,9 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class=\"uk-margin\">
     <h1>Nouvel article</h1>
-
+    
     {{ form_start(form) }}
         <div class=\"uk-margin\">
             {{ form_widget(form.title, {'attr': {'class': 'uk-input', 'required': 'true'},}) }}
@@ -147,14 +146,11 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
             {{ form_widget(form.image, {'attr': {'id': 'kv-explorer'},}) }}
         </div>
         <input type=\"submit\" class=\"uk-button uk-button-primary\" value=\"Enregistrer\" />
+        <a href=\"{{ path('admin_posts_index') }}\" class=\"uk-button uk-button-default\">Liste des articles</a>
     {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href=\"{{ path('admin_posts_index') }}\" class=\"uk-button uk-button-default\">Back to the list</a>
-        </li>
-    </ul>
+    <br><br><br>
+    </div>
 {% endblock %}
-", ":posts:new.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/new.html.twig");
+", "posts/new.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/new.html.twig");
     }
 }

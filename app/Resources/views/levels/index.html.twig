@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="uk-child-width-1-1@m" uk-grid>
+    <h1>
+        <a href="{{ path('admin_competitions_show', { 'id': competion.id }) }}">
+            {{ competion.title }}
+        </a> > Levels list
+    </h1>
+    <table class="uk-table uk-table-striped" id="zero_config">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for level in levels %}
+            <tr>
+                <td><a href="{{ path('admin_levels_show', { 'id': level.id }) }}">{{ level.id }}</a></td>
+                <td>{{ level.title }}</td>
+                <td>{{ level.content }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_levels_show', { 'id': level.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_levels_edit', { 'id': level.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_levels_new', { 'id': competion.id }) }}">Create a new level</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

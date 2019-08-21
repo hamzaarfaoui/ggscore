@@ -3,15 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/ggscore/app/Resources/views/posts/new.html.twig</file>
-            <file>file:/var/www/html/ggscore/app/Resources/views/includes/front/js.html.twig</file>
-            <file>file:/var/www/html/ggscore/src/FrontBundle/Controller/DefaultController.php</file>
-            <file>file:/var/www/html/ggscore/app/Resources/views/posts/edit.html.twig</file>
-            <file>file:/var/www/html/ggscore/src/BackBundle/Form/PostsType.php</file>
-            <file>file:/var/www/html/ggscore/src/FrontBundle/Resources/views/Default/index.html.twig</file>
-            <file>file:/var/www/html/ggscore/app/Resources/views/base.html.twig</file>
+            <file>file:/var/www/html/ggscore/src/BackBundle/Controller/LevelsController.php</file>
+            <file>file:/var/www/html/ggscore/app/Resources/views/levels/show.html.twig</file>
+            <file>file:/var/www/html/ggscore/app/Resources/views/levels/new.html.twig</file>
+            <file>file:/var/www/html/ggscore/src/BackBundle/Controller/CompetionsController.php</file>
+            <file>file:/var/www/html/ggscore/app/Resources/views/competions/new.html.twig</file>
+            <file>file:/var/www/html/ggscore/app/Resources/views/competions/index.html.twig</file>
+            <file>file:/var/www/html/ggscore/app/Resources/views/competions/show.html.twig</file>
             <file>file:/var/www/html/ggscore/app/Resources/views/posts/index.html.twig</file>
-            <file>file:/var/www/html/ggscore/src/BackBundle/Controller/PostsController.php</file>
+            <file>file:/var/www/html/ggscore/src/BackBundle/Form/CompetionsType.php</file>
         </group>
     </open-files>
 </project-private>

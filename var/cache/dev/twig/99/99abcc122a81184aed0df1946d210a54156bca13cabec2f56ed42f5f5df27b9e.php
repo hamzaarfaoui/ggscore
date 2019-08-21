@@ -58,90 +58,95 @@ class __TwigTemplate_c9fa86f82031a11e5770f9a53e081fe62ff2296fbcf0a5b3db4fe0eb89d
 
         // line 4
         echo "    <div class=\"uk-child-width-1-1@m\" uk-grid>
-    <h1>Articles</h1>
-    
-    <a href=\"";
-        // line 7
+        <h1>Articles</h1>
+        <div class=\"uk-inline\">
+            <div class=\"uk-position-right\">
+                <a href=\"";
+        // line 8
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_new");
-        echo "\">Create a new post</a>
-
-    <table class=\"uk-table uk-table-striped\" id=\"zero_config\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Image</th>
-                <th>Createdat</th>
-                <th>Updatedat</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 22
+        echo "\" class=\"uk-button uk-button-default\">Créer un articles</a>
+                <a href=\"";
+        // line 9
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_competitions_index");
+        echo "\" class=\"uk-button uk-button-default\">Competitions</a>
+            </div>
+        </div>
+        <br><br><br>
+        <div class=\"uk-margin\">
+        <table class=\"uk-table uk-table-striped\" id=\"zero_config\">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Image</th>
+                    <th>Createdat</th>
+                    <th>Updatedat</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            ";
+        // line 27
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? $this->getContext($context, "posts")));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 23
-            echo "            <tr>
-                <td><a href=\"";
-            // line 24
+            // line 28
+            echo "                <tr>
+                    <td><a href=\"";
+            // line 29
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_show", ["id" => $this->getAttribute($context["post"], "id", [])]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "id", []), "html", null, true);
             echo "</a></td>
-                <td>";
-            // line 25
+                    <td>";
+            // line 30
             echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "title", []), "html", null, true);
             echo "</td>
-                <td>";
-            // line 26
+                    <td>";
+            // line 31
             echo twig_escape_filter($this->env, (((twig_length_filter($this->env, $this->getAttribute($context["post"], "title", [])) > 70)) ? ((twig_slice($this->env, $this->getAttribute($context["post"], "title", []), 0, 70) . "...")) : ($this->getAttribute($context["post"], "title", []))), "html", null, true);
             echo "</td>
-                <td><a href=\"";
-            // line 27
+                    <td><a href=\"";
+            // line 32
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("uploads/articles/"), "html", null, true);
             echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "image", []), "html", null, true);
             echo "\">Image</a></td>
-                <td>";
-            // line 28
+                    <td>";
+            // line 33
             if ($this->getAttribute($context["post"], "createdAt", [])) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["post"], "createdAt", []), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
-                <td>";
-            // line 29
+                    <td>";
+            // line 34
             if ($this->getAttribute($context["post"], "updatedAt", [])) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["post"], "updatedAt", []), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
-                <td>
-                    <ul>
-                        <li>
+                    <td>
+                        <div class=\"uk-button-group\">
                             <a href=\"";
-            // line 33
+            // line 37
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_show", ["id" => $this->getAttribute($context["post"], "id", [])]), "html", null, true);
-            echo "\">show</a>
-                        </li>
-                        <li>
+            echo "\" class=\"uk-button uk-button-secondary\" uk-icon=\"icon: search\"></a>
                             <a href=\"";
-            // line 36
+            // line 38
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_edit", ["id" => $this->getAttribute($context["post"], "id", [])]), "html", null, true);
-            echo "\">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        ";
+            echo "\" class=\"uk-button uk-button-primary\" uk-icon=\"icon: pencil\"></a>
+                        </div>
+                    </td>
+                </tr>
+            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 42
-        echo "        </tbody>
-    </table>
-    <div class=\"uk-child-width-1-2@m\" uk-grid>
+        // line 43
+        echo "            </tbody>
+        </table>
+        </div>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -163,7 +168,7 @@ class __TwigTemplate_c9fa86f82031a11e5770f9a53e081fe62ff2296fbcf0a5b3db4fe0eb89d
 
     public function getDebugInfo()
     {
-        return array (  142 => 42,  130 => 36,  124 => 33,  115 => 29,  109 => 28,  104 => 27,  100 => 26,  96 => 25,  90 => 24,  87 => 23,  83 => 22,  65 => 7,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  146 => 43,  135 => 38,  131 => 37,  123 => 34,  117 => 33,  112 => 32,  108 => 31,  104 => 30,  98 => 29,  95 => 28,  91 => 27,  70 => 9,  66 => 8,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -180,46 +185,48 @@ class __TwigTemplate_c9fa86f82031a11e5770f9a53e081fe62ff2296fbcf0a5b3db4fe0eb89d
 
 {% block body %}
     <div class=\"uk-child-width-1-1@m\" uk-grid>
-    <h1>Articles</h1>
-    
-    <a href=\"{{ path('admin_posts_new') }}\">Create a new post</a>
-
-    <table class=\"uk-table uk-table-striped\" id=\"zero_config\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Image</th>
-                <th>Createdat</th>
-                <th>Updatedat</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for post in posts %}
-            <tr>
-                <td><a href=\"{{ path('admin_posts_show', { 'id': post.id }) }}\">{{ post.id }}</a></td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.title|length>70?post.title|slice(0, 70)~'...':post.title }}</td>
-                <td><a href=\"{{ asset('uploads/articles/') }}{{ post.image }}\">Image</a></td>
-                <td>{% if post.createdAt %}{{ post.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if post.updatedAt %}{{ post.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href=\"{{ path('admin_posts_show', { 'id': post.id }) }}\">show</a>
-                        </li>
-                        <li>
-                            <a href=\"{{ path('admin_posts_edit', { 'id': post.id }) }}\">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <div class=\"uk-child-width-1-2@m\" uk-grid>
+        <h1>Articles</h1>
+        <div class=\"uk-inline\">
+            <div class=\"uk-position-right\">
+                <a href=\"{{ path('admin_posts_new') }}\" class=\"uk-button uk-button-default\">Créer un articles</a>
+                <a href=\"{{ path('admin_competitions_index') }}\" class=\"uk-button uk-button-default\">Competitions</a>
+            </div>
+        </div>
+        <br><br><br>
+        <div class=\"uk-margin\">
+        <table class=\"uk-table uk-table-striped\" id=\"zero_config\">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Image</th>
+                    <th>Createdat</th>
+                    <th>Updatedat</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for post in posts %}
+                <tr>
+                    <td><a href=\"{{ path('admin_posts_show', { 'id': post.id }) }}\">{{ post.id }}</a></td>
+                    <td>{{ post.title }}</td>
+                    <td>{{ post.title|length>70?post.title|slice(0, 70)~'...':post.title }}</td>
+                    <td><a href=\"{{ asset('uploads/articles/') }}{{ post.image }}\">Image</a></td>
+                    <td>{% if post.createdAt %}{{ post.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{% if post.updatedAt %}{{ post.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>
+                        <div class=\"uk-button-group\">
+                            <a href=\"{{ path('admin_posts_show', { 'id': post.id }) }}\" class=\"uk-button uk-button-secondary\" uk-icon=\"icon: search\"></a>
+                            <a href=\"{{ path('admin_posts_edit', { 'id': post.id }) }}\" class=\"uk-button uk-button-primary\" uk-icon=\"icon: pencil\"></a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
 {% endblock %}
 ", "posts/index.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/index.html.twig");
     }
