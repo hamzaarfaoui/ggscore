@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/front/bootstrap.min.css')}}">
+{% endblock %}
 {% block body %}
     <h1>Post edit</h1>
-
-    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-12">
+    {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data'} }) }}
         <div class="uk-margin">
             {{ form_widget(form.title, {'attr': {'class': 'uk-input', 'required': 'true'},}) }}
         </div>
@@ -12,19 +15,46 @@
         </div>
         
         <div class="uk-margin">
-            {{ form_widget(form.image, {'attr': {'id': 'kv-explorer'},}) }}
+            <div class="file-loading">
+                <input id="kv-explorer" class="file" type="file" name="image">
+            </div>
         </div>
-        <input type="submit" class="uk-button uk-button-primary" value="Enregistrer" />
+        <input type="submit" class="btn btn-primary" value="Enregistrer" />
+        <a class="btn btn-default" href="{{ path('admin_posts_index') }}">Liste d'articles</a>
+        <button class="btn btn-danger uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Supprimer</button>
+        <!-- This is the modal -->
+        <div id="modal-example" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Suppression</h2>
+                <p>Etes-vous sùre de vouloir supprimer cet article ?</p>
+                <p class="uk-text-right">
+                        <a href="{{ path('admin_posts_delete', {id:post.id}) }}" class="btn btn-danger">Oui</a>
+                        <button class="btn btn-default uk-modal-close" type="button">Non</button>
+                </p>
+            </div>
+        </div>
     {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a class="uk-button uk-button-primary" href="{{ path('admin_posts_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input class="uk-button uk-button-danger" type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        </div>
+        
+            
+    </div>   
+    <br><br><br><br>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('assets/front/bootstrap.min.js')}}"></script>
+    <script>
+        $("#kv-explorer").fileinput({
+            'theme': 'explorer-fa',
+            'uploadUrl': '#',
+            language: 'fr',
+            allowedFileExtensions: ['jpg', 'png', 'gif', 'pdf', 'txt', 'csv', 'ods', 'xls', 'docx', 'jpeg'],
+            overwriteInitial: false,
+            initialPreviewAsData: true,
+            {% if(post.image) %}
+            initialPreview: [
+                "{{ asset('uploads/articles/') }}{{ post.image }}"
+            ],
+            {% endif %}
+        });
+    </script>
 {% endblock %}

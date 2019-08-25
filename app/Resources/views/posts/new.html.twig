@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/front/bootstrap.min.css')}}">
+{% endblock %}
 {% block body %}
     <div class="uk-margin">
     <h1>Nouvel article</h1>
     
-    {{ form_start(form) }}
+    {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data'} }) }}
         <div class="uk-margin">
             {{ form_widget(form.title, {'attr': {'class': 'uk-input', 'required': 'true'},}) }}
         </div>
@@ -13,11 +15,31 @@
         </div>
         
         <div class="uk-margin">
-            {{ form_widget(form.image, {'attr': {'id': 'kv-explorer'},}) }}
+            <div class="file-loading">
+                <input id="kv-explorer" class="file" type="file" name="image">
+            </div>
         </div>
         <input type="submit" class="uk-button uk-button-primary" value="Enregistrer" />
         <a href="{{ path('admin_posts_index') }}" class="uk-button uk-button-default">Liste des articles</a>
     {{ form_end(form) }}
     <br><br><br>
     </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('assets/front/bootstrap.min.js')}}"></script>
+    <script>
+        $("#kv-explorer").fileinput({
+            'theme': 'explorer-fa',
+            'uploadUrl': '#',
+            language: 'fr',
+            allowedFileExtensions: ['jpg', 'png', 'gif', 'pdf', 'txt', 'csv', 'ods', 'xls', 'docx', 'jpeg'],
+            overwriteInitial: false,
+            initialPreviewAsData: true,
+            {% if(post.image) %}
+            initialPreview: [
+                "{{ asset('uploads/articles/') }}{{ post.image }}"
+            ],
+            {% endif %}
+        });
+    </script>
 {% endblock %}

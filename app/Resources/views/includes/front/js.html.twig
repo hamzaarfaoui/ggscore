@@ -1,6 +1,6 @@
 <script src="{{ asset('assets/front/uikit/uikit.min.js')}}"></script>
 <script src="{{ asset('assets/front/uikit/uikit-icons.min.js')}}"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 <script src="{{ asset('assets/back/datatable/jquery-3.3.1.js')}}"></script>
 <script src="{{ asset('assets/back/datatable/jquery.dataTables.min.js')}}"></script>
 <script src="{{ asset('assets/back/datatable/dataTables.uikit.min.js')}}"></script>
@@ -13,24 +13,7 @@
 
 
         $(document).ready(function () {
-            $("#kv-explorer").fileinput({
-            'theme': 'explorer-fa',
-            'uploadUrl': '#',
-            language: 'fr',
-            allowedFileExtensions: ['jpg', 'png', 'gif', 'pdf', 'txt', 'csv', 'ods', 'xls', 'docx', 'jpeg'],
-            overwriteInitial: false,
-            initialPreviewAsData: true,
-            /*initialPreview: [
-                "http://lorempixel.com/1920/1080/nature/1",
-                "http://lorempixel.com/1920/1080/nature/2",
-                "http://lorempixel.com/1920/1080/nature/3"
-            ],
-            initialPreviewConfig: [
-                {caption: "nature-1.jpg", size: 329892, width: "120px", url: "{$url}", key: 1},
-                {caption: "nature-2.jpg", size: 872378, width: "120px", url: "{$url}", key: 2},
-                {caption: "nature-3.jpg", size: 632762, width: "120px", url: "{$url}", key: 3}
-            ]*/
-        });
+            
                 $('#zero_config').DataTable({
                     "scrollCollapse": true,
                     "paging": true,

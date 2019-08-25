@@ -1,0 +1,11 @@
+<div class="uk-card uk-card-secondary uk-card-body" style="padding: 20px;    margin-top: 10px;">
+    <h3 class="uk-card-title" style='float: right;'>بطولات</h3><br>
+<ul class="uk-list uk-list-divider ">
+    {% for competition in competitions %}
+        <li class='uk-flex-right'>
+            <a style="font-size: 11px;" href="{{ path('competitions_show', {id:competition.id}) }}">{{ competition.title }}</a>
+            
+        </li>
+    {% endfor %}
+</ul>
+</div>

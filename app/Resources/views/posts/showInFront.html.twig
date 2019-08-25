@@ -13,14 +13,14 @@
         </div>
     </div>#}
     <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-        <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
-            <img src="{{ asset('uploads/articles/') }}{{ post.image }}" alt="" uk-cover>
+        <div class="uk-card-media-left uk-cover-container">
+            <img src="{{ asset('uploads/articles/') }}{{ post.image }}">
             <canvas width="600" height="400"></canvas>
         </div>
         <div>
             <div class="uk-card-body">
-                <h3 class="uk-card-title">{{ post.title }}</h3>
-                <p>{{ post.content|raw }}</p>
+                <h3 class="uk-card-title" style="text-align: right;">{{ post.title }}</h3>
+                <p style="text-align: justify; float: left;">{{ post.content|raw }}</p>
             </div>
         </div>
     </div>

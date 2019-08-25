@@ -5,6 +5,7 @@ namespace BackBundle\Controller;
 use BackBundle\Entity\Posts;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 
 
@@ -46,30 +47,16 @@ class PostsController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $imageArticle = $form['image']->getData();
-
-            // this condition is needed because the 'brochure' field is not required
-            // so the PDF file must be processed only when a file is uploaded
-            if ($imageArticle) {
-                $originalFilename = pathinfo($imageArticle->getClientOriginalName(), PATHINFO_FILENAME);
-                // this is needed to safely include the file name as part of the URL
-                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageArticle->guessExtension();
-
-                // Move the file to the directory where brochures are stored
-                try {
-                    $imageArticle->move(
-                        $this->getParameter('images_articles'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
-                }
-
-                // updates the 'brochureFilename' property to store the PDF file name
-                // instead of its contents
-                $post->setImage($newFilename);
-            }
+            
+            if (isset($_FILES["image"]) && !empty($_FILES["image"])) {
+                  $file = $_FILES["image"]["name"];
+                $File_Ext = substr($file, strrpos($file, '.'));
+                $fileName = md5(uniqid()) . $File_Ext;
+                move_uploaded_file(
+                    $_FILES["image"]["tmp_name"], $this->getParameter('images_articles') . "/" . $fileName
+                );
+                $post->setImage($fileName);
+             }
             $post->setCreatedAt(new \DateTime('now'));
             $post->setUpdatedAt(new \DateTime('now'));
             $em->persist($post);
@@ -110,40 +97,22 @@ class PostsController extends Controller
     {
         $deleteForm = $this->createDeleteForm($post);
         $editForm = $this->createForm('BackBundle\Form\PostsType', $post);
+        
         $editForm->handleRequest($request);
-
+        //dump($post->getImage());die();
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
             $em = $this->getDoctrine()->getManager();
-            $imageArticle = $editForm['image']->getData();
-            // this condition is needed because the 'brochure' field is not required
-            // so the PDF file must be processed only when a file is uploaded
-            if ($imageArticle) {
-                if($imageArticle->getClientOriginalName()!==null){
-                    dump($imageArticle->getClientOriginalName());die(); 
-                $originalFilename = pathinfo($imageArticle->getClientOriginalName(), PATHINFO_FILENAME);
-                // this is needed to safely include the file name as part of the URL
-                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageArticle->guessExtension();
-
-                // Move the file to the directory where brochures are stored
-                try {
-                    $imageArticle->move(
-                        $this->getParameter('images_articles'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
-                }
-
-                // updates the 'brochureFilename' property to store the PDF file name
-                // instead of its contents
-                $post->setImage($newFilename);
-                }else{
-                    dump('aucune image');die(); 
-                }
-            }
-            //die();
+            $post->setImage($post->getImage());
+             if (isset($_FILES["image"]["name"]) && !empty($_FILES["image"]["name"])) {
+                  $file = $_FILES["image"]["name"];
+                $File_Ext = substr($file, strrpos($file, '.'));
+                $fileName = md5(uniqid()) . $File_Ext;
+                move_uploaded_file(
+                    $_FILES["image"]["tmp_name"], $this->getParameter('images_articles') . "/" . $fileName
+                );
+                $post->setImage($fileName);
+             }
+             
             $post->setUpdatedAt(new \DateTime('now'));
             $em->persist($post);
             $em->flush();
@@ -160,19 +129,14 @@ class PostsController extends Controller
     /**
      * Deletes a post entity.
      *
-     * @Route("/{id}", name="admin_posts_delete")
-     * @Method("DELETE")
+     * @Route("/delete/{id}", name="admin_posts_delete")
+     * @Method("POST")
      */
     public function deleteAction(Request $request, Posts $post)
     {
-        $form = $this->createDeleteForm($post);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($post);
-            $em->flush();
-        }
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($post);
+        $em->flush();
 
         return $this->redirectToRoute('admin_posts_index');
     }

@@ -1,6 +1,32 @@
 {% extends "base.html.twig" %}
 {% block stylesheets %}
     <style>
+        /* Create two equal columns that floats next to each other */
+            .column1 {
+              float: left;
+              width: 78%;
+              padding: 10px;
+              height: 300px; /* Should be removed. Only for demonstration */
+            }
+            
+            .column2 {
+              float: right;
+              width: 18%;
+              height: 300px; /* Should be removed. Only for demonstration */
+            }
+
+            /* Clear floats after the columns */
+            .ligne:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+        .text-overlay{
+            font-size: 14px;
+        }
+        .uk-overlay{
+            padding: 15px;
+        }
         @media screen and (max-width: 400px){
             .text-overlay{
                 font-size: 11px;
@@ -13,23 +39,34 @@
 {% endblock %}    
 {% block body %}
     <div style="margin-bottom: 50px;">
-        <div class="uk-child-width-1-3@m" uk-grid>
-            {% for post in posts %}
-                <div>
+        <div class="ligne">
+            <div class="column1">
+                <div class="uk-child-width-1-3@m" uk-grid>
+                    {% for post in posts %}
+                        <div>
 
-                    <div class="uk-inline" style="overflow: hidden;">
-                        <a href="{{ path('front_posts_show', { 'id': post.id }) }}">
-                            <img src="{{ asset('uploads/articles/') }}{{ post.image }}" alt="" style="width: 584px;height: 350px;margin-top: -50px;transform: translateY(50px);">
-                        </a>
-                        <a href="{{ path('front_posts_show', { 'id': post.id }) }}">
-                            <div class="uk-overlay uk-overlay-primary uk-position-bottom">
-                                <p class="text-overlay">{{ post.title|length>70?post.title|slice(0, 70)~'...':post.title }}</p>
+                            <div class="uk-inline" style="overflow: hidden;">
+                                <a href="{{ path('front_posts_show', { 'id': post.id }) }}">
+                                    <img src="{{ asset('uploads/articles/') }}{{ post.image }}" alt="" style="width: 584px;height: 350px;margin-top: -50px;transform: translateY(50px);">
+                                </a>
+                                <a href="{{ path('front_posts_show', { 'id': post.id }) }}">
+                                    <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+                                        <p class="text-overlay" style='color: #FFF;'>{{ post.title|length>70?post.title|slice(0, 70)~'...':post.title }}</p>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
 
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
+            </div>
+            <div class="column2">
+                <div style="z-index: 980;" uk-sticky="top: 200; bottom: #animation">
+                    {{ render(controller(
+                        'FrontBundle:Default:competitions'
+                    )) }}
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}    
