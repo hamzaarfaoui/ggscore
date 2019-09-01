@@ -124,15 +124,21 @@ class __TwigTemplate_23bb7f80d4f22b07a26cc73d3c24462e1f565e0da0752eb1dc7b1d77346
         echo "\">Edit</a>
         </li>
         <li>
-            ";
-        // line 43
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_start');
-        echo "
-                <input type=\"submit\" value=\"Delete\">
-            ";
-        // line 45
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_end');
-        echo "
+            <button class=\"btn btn-danger uk-margin-small-right\" type=\"button\" uk-toggle=\"target: #modal-example\">Supprimer</button>
+        <!-- This is the modal -->
+        <div id=\"modal-example\" uk-modal>
+            <div class=\"uk-modal-dialog uk-modal-body\">
+                <h2 class=\"uk-modal-title\">Suppression</h2>
+                <p>Etes-vous sùre de vouloir supprimer cet article ?</p>
+                <p class=\"uk-text-right\">
+                        <a href=\"";
+        // line 50
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_delete", ["id" => $this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "id", [])]), "html", null, true);
+        echo "\" class=\"btn btn-danger\">Oui</a>
+                        <button class=\"btn btn-default uk-modal-close\" type=\"button\">Non</button>
+                </p>
+            </div>
+        </div>
         </li>
     </ul>
 ";
@@ -156,7 +162,7 @@ class __TwigTemplate_23bb7f80d4f22b07a26cc73d3c24462e1f565e0da0752eb1dc7b1d77346
 
     public function getDebugInfo()
     {
-        return array (  134 => 45,  129 => 43,  123 => 40,  117 => 37,  105 => 30,  96 => 26,  89 => 22,  82 => 18,  75 => 14,  68 => 10,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  136 => 50,  123 => 40,  117 => 37,  105 => 30,  96 => 26,  89 => 22,  82 => 18,  75 => 14,  68 => 10,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -211,9 +217,18 @@ class __TwigTemplate_23bb7f80d4f22b07a26cc73d3c24462e1f565e0da0752eb1dc7b1d77346
             <a href=\"{{ path('admin_posts_edit', { 'id': post.id }) }}\">Edit</a>
         </li>
         <li>
-            {{ form_start(delete_form) }}
-                <input type=\"submit\" value=\"Delete\">
-            {{ form_end(delete_form) }}
+            <button class=\"btn btn-danger uk-margin-small-right\" type=\"button\" uk-toggle=\"target: #modal-example\">Supprimer</button>
+        <!-- This is the modal -->
+        <div id=\"modal-example\" uk-modal>
+            <div class=\"uk-modal-dialog uk-modal-body\">
+                <h2 class=\"uk-modal-title\">Suppression</h2>
+                <p>Etes-vous sùre de vouloir supprimer cet article ?</p>
+                <p class=\"uk-text-right\">
+                        <a href=\"{{ path('admin_posts_delete', {id:post.id}) }}\" class=\"btn btn-danger\">Oui</a>
+                        <button class=\"btn btn-default uk-modal-close\" type=\"button\">Non</button>
+                </p>
+            </div>
+        </div>
         </li>
     </ul>
 {% endblock %}

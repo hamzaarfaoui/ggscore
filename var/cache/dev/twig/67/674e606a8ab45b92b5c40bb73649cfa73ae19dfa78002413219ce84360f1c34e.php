@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* :posts:showInFront.html.twig */
+/* posts/showInFront.html.twig */
 class __TwigTemplate_7f541f93804d64ed986f7919f12fb278641fa48338316dc14ae6282afaa0ae7d extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -32,12 +32,12 @@ class __TwigTemplate_7f541f93804d64ed986f7919f12fb278641fa48338316dc14ae6282afaa
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:showInFront.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/showInFront.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:showInFront.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/showInFront.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", ":posts:showInFront.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "posts/showInFront.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -60,21 +60,21 @@ class __TwigTemplate_7f541f93804d64ed986f7919f12fb278641fa48338316dc14ae6282afaa
         echo "    ";
         // line 15
         echo "    <div class=\"uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin\" uk-grid>
-        <div class=\"uk-flex-last@s uk-card-media-right uk-cover-container\">
+        <div class=\"uk-card-media-left uk-cover-container\">
             <img src=\"";
         // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("uploads/articles/"), "html", null, true);
         echo twig_escape_filter($this->env, $this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "image", []), "html", null, true);
-        echo "\" alt=\"\" uk-cover>
+        echo "\">
             <canvas width=\"600\" height=\"400\"></canvas>
         </div>
         <div>
             <div class=\"uk-card-body\">
-                <h3 class=\"uk-card-title\">";
+                <h3 class=\"uk-card-title\" style=\"text-align: right;\">";
         // line 22
         echo twig_escape_filter($this->env, $this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "title", []), "html", null, true);
         echo "</h3>
-                <p>";
+                <p style=\"text-align: justify; float: left;\">";
         // line 23
         echo $this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "content", []);
         echo "</p>
@@ -92,7 +92,7 @@ class __TwigTemplate_7f541f93804d64ed986f7919f12fb278641fa48338316dc14ae6282afaa
 
     public function getTemplateName()
     {
-        return ":posts:showInFront.html.twig";
+        return "posts/showInFront.html.twig";
     }
 
     public function isTraitable()
@@ -130,18 +130,18 @@ class __TwigTemplate_7f541f93804d64ed986f7919f12fb278641fa48338316dc14ae6282afaa
         </div>
     </div>#}
     <div class=\"uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin\" uk-grid>
-        <div class=\"uk-flex-last@s uk-card-media-right uk-cover-container\">
-            <img src=\"{{ asset('uploads/articles/') }}{{ post.image }}\" alt=\"\" uk-cover>
+        <div class=\"uk-card-media-left uk-cover-container\">
+            <img src=\"{{ asset('uploads/articles/') }}{{ post.image }}\">
             <canvas width=\"600\" height=\"400\"></canvas>
         </div>
         <div>
             <div class=\"uk-card-body\">
-                <h3 class=\"uk-card-title\">{{ post.title }}</h3>
-                <p>{{ post.content|raw }}</p>
+                <h3 class=\"uk-card-title\" style=\"text-align: right;\">{{ post.title }}</h3>
+                <p style=\"text-align: justify; float: left;\">{{ post.content|raw }}</p>
             </div>
         </div>
     </div>
 {% endblock %}
-", ":posts:showInFront.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/showInFront.html.twig");
+", "posts/showInFront.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/showInFront.html.twig");
     }
 }

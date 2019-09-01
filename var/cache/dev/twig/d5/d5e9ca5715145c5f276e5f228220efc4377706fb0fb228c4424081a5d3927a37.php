@@ -55,29 +55,31 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
         echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
-        
+        <style>
+            
+        </style>
     </head>
     <body>
         ";
-        // line 12
-        $this->loadTemplate("includes/front/navbar.html.twig", "base.html.twig", 12)->display($context);
-        // line 13
+        // line 14
+        $this->loadTemplate("includes/front/navbar.html.twig", "base.html.twig", 14)->display($context);
+        // line 15
         echo "        <div class=\"uk-container\" style=\"margin-top: 20px;margin-bottom: 20px;\">
             ";
-        // line 14
+        // line 16
         $this->displayBlock('body', $context, $blocks);
-        // line 15
+        // line 17
         echo "        </div>
         ";
-        // line 16
-        $this->loadTemplate("includes/front/footer.html.twig", "base.html.twig", 16)->display($context);
-        // line 17
-        echo "        ";
-        $this->loadTemplate("includes/front/js.html.twig", "base.html.twig", 17)->display($context);
         // line 18
+        $this->loadTemplate("includes/front/footer.html.twig", "base.html.twig", 18)->display($context);
+        // line 19
+        echo "        ";
+        $this->loadTemplate("includes/front/js.html.twig", "base.html.twig", 19)->display($context);
+        // line 20
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 19
+        // line 21
         echo "    </body>
 </html>
 ";
@@ -123,7 +125,7 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
 
     }
 
-    // line 14
+    // line 16
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -140,7 +142,7 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
 
     }
 
-    // line 18
+    // line 20
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -169,7 +171,7 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
 
     public function getDebugInfo()
     {
-        return array (  144 => 18,  127 => 14,  110 => 7,  93 => 5,  81 => 19,  78 => 18,  75 => 17,  73 => 16,  70 => 15,  68 => 14,  65 => 13,  63 => 12,  55 => 8,  52 => 7,  50 => 6,  46 => 5,  40 => 1,);
+        return array (  146 => 20,  129 => 16,  112 => 7,  95 => 5,  83 => 21,  80 => 20,  77 => 19,  75 => 18,  72 => 17,  70 => 16,  67 => 15,  65 => 14,  55 => 8,  52 => 7,  50 => 6,  46 => 5,  40 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -190,7 +192,9 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
         {% include 'includes/front/css.html.twig' %}
         {% block stylesheets %}{% endblock %}
         <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
-        
+        <style>
+            
+        </style>
     </head>
     <body>
         {% include 'includes/front/navbar.html.twig' %}

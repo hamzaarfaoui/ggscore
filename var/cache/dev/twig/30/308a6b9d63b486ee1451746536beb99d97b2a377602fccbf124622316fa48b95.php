@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* posts/edit.html.twig */
+/* :posts:edit.html.twig */
 class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60ec673 extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -19,7 +19,9 @@ class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60
         parent::__construct($env);
 
         $this->blocks = [
+            'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -32,12 +34,12 @@ class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/edit.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:edit.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/edit.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "posts/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":posts:edit.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -47,7 +49,29 @@ class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60
 
     }
 
-    // line 3
+    // line 2
+    public function block_stylesheets($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 3
+        echo "    <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/front/bootstrap.min.css"), "html", null, true);
+        echo "\">
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -56,57 +80,107 @@ class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
-        echo "    <h1>Post edit</h1>
-
-    ";
         // line 6
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
+        echo "    <h1>Post edit</h1>
+    <div class=\"row\">
+        <div class=\"col-md-12\">
+    ";
+        // line 9
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start', ["attr" => ["enctype" => "multipart/form-data"]]);
         echo "
         <div class=\"uk-margin\">
             ";
-        // line 8
+        // line 11
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "title", []), 'widget', ["attr" => ["class" => "uk-input", "required" => "true"]]);
         echo "
         </div>
         <div class=\"uk-margin\">
             ";
-        // line 11
+        // line 14
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "content", []), 'widget', ["attr" => ["class" => "ckeditor", "required" => "true"]]);
         echo "
         </div>
         
         <div class=\"uk-margin\">
-            ";
-        // line 15
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "image", []), 'widget', ["attr" => ["id" => "kv-explorer"]]);
-        echo "
+            <div class=\"file-loading\">
+                <input id=\"kv-explorer\" class=\"file\" type=\"file\" name=\"image\">
+            </div>
         </div>
-        <input type=\"submit\" class=\"uk-button uk-button-primary\" value=\"Enregistrer\" />
+        <input type=\"submit\" class=\"btn btn-primary\" value=\"Enregistrer\" />
+        <a class=\"btn btn-default\" href=\"";
+        // line 23
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_index");
+        echo "\">Liste d'articles</a>
+        <button class=\"btn btn-danger uk-margin-small-right\" type=\"button\" uk-toggle=\"target: #modal-example\">Supprimer</button>
+        <!-- This is the modal -->
+        <div id=\"modal-example\" uk-modal>
+            <div class=\"uk-modal-dialog uk-modal-body\">
+                <h2 class=\"uk-modal-title\">Suppression</h2>
+                <p>Etes-vous sùre de vouloir supprimer cet article ?</p>
+                <p class=\"uk-text-right\">
+                        <a href=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_delete", ["id" => $this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "id", [])]), "html", null, true);
+        echo "\" class=\"btn btn-danger\">Oui</a>
+                        <button class=\"btn btn-default uk-modal-close\" type=\"button\">Non</button>
+                </p>
+            </div>
+        </div>
     ";
-        // line 18
+        // line 36
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
+        </div>
+        
+            
+    </div>   
+    <br><br><br><br>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
-    <ul>
-        <li>
-            <a class=\"uk-button uk-button-primary\" href=\"";
-        // line 22
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_index");
-        echo "\">Back to the list</a>
-        </li>
-        <li>
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 43
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 44
+        echo "    <script src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/front/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+    <script>
+        \$(\"#kv-explorer\").fileinput({
+            'theme': 'explorer-fa',
+            'uploadUrl': '#',
+            language: 'fr',
+            allowedFileExtensions: ['jpg', 'png', 'gif', 'pdf', 'txt', 'csv', 'ods', 'xls', 'docx', 'jpeg'],
+            overwriteInitial: false,
+            initialPreviewAsData: true,
             ";
-        // line 25
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_start');
-        echo "
-                <input class=\"uk-button uk-button-danger\" type=\"submit\" value=\"Delete\">
+        // line 53
+        if ($this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "image", [])) {
+            // line 54
+            echo "            initialPreview: [
+                \"";
+            // line 55
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("uploads/articles/"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "image", []), "html", null, true);
+            echo "\"
+            ],
             ";
-        // line 27
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_end');
-        echo "
-        </li>
-    </ul>
+        }
+        // line 58
+        echo "        });
+    </script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -118,7 +192,7 @@ class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60
 
     public function getTemplateName()
     {
-        return "posts/edit.html.twig";
+        return ":posts:edit.html.twig";
     }
 
     public function isTraitable()
@@ -128,7 +202,7 @@ class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60
 
     public function getDebugInfo()
     {
-        return array (  106 => 27,  101 => 25,  95 => 22,  88 => 18,  82 => 15,  75 => 11,  69 => 8,  64 => 6,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  182 => 58,  175 => 55,  172 => 54,  170 => 53,  157 => 44,  148 => 43,  131 => 36,  123 => 31,  112 => 23,  100 => 14,  94 => 11,  89 => 9,  84 => 6,  75 => 5,  62 => 3,  53 => 2,  31 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -142,11 +216,14 @@ class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/front/bootstrap.min.css')}}\">
+{% endblock %}
 {% block body %}
     <h1>Post edit</h1>
-
-    {{ form_start(form) }}
+    <div class=\"row\">
+        <div class=\"col-md-12\">
+    {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data'} }) }}
         <div class=\"uk-margin\">
             {{ form_widget(form.title, {'attr': {'class': 'uk-input', 'required': 'true'},}) }}
         </div>
@@ -155,22 +232,49 @@ class __TwigTemplate_88d03abf4ac18af3cd17b49ba92be877547aa1a881810a4f02ede301b60
         </div>
         
         <div class=\"uk-margin\">
-            {{ form_widget(form.image, {'attr': {'id': 'kv-explorer'},}) }}
+            <div class=\"file-loading\">
+                <input id=\"kv-explorer\" class=\"file\" type=\"file\" name=\"image\">
+            </div>
         </div>
-        <input type=\"submit\" class=\"uk-button uk-button-primary\" value=\"Enregistrer\" />
+        <input type=\"submit\" class=\"btn btn-primary\" value=\"Enregistrer\" />
+        <a class=\"btn btn-default\" href=\"{{ path('admin_posts_index') }}\">Liste d'articles</a>
+        <button class=\"btn btn-danger uk-margin-small-right\" type=\"button\" uk-toggle=\"target: #modal-example\">Supprimer</button>
+        <!-- This is the modal -->
+        <div id=\"modal-example\" uk-modal>
+            <div class=\"uk-modal-dialog uk-modal-body\">
+                <h2 class=\"uk-modal-title\">Suppression</h2>
+                <p>Etes-vous sùre de vouloir supprimer cet article ?</p>
+                <p class=\"uk-text-right\">
+                        <a href=\"{{ path('admin_posts_delete', {id:post.id}) }}\" class=\"btn btn-danger\">Oui</a>
+                        <button class=\"btn btn-default uk-modal-close\" type=\"button\">Non</button>
+                </p>
+            </div>
+        </div>
     {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a class=\"uk-button uk-button-primary\" href=\"{{ path('admin_posts_index') }}\">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input class=\"uk-button uk-button-danger\" type=\"submit\" value=\"Delete\">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        </div>
+        
+            
+    </div>   
+    <br><br><br><br>
 {% endblock %}
-", "posts/edit.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/edit.html.twig");
+{% block javascripts %}
+    <script src=\"{{ asset('assets/front/bootstrap.min.js')}}\"></script>
+    <script>
+        \$(\"#kv-explorer\").fileinput({
+            'theme': 'explorer-fa',
+            'uploadUrl': '#',
+            language: 'fr',
+            allowedFileExtensions: ['jpg', 'png', 'gif', 'pdf', 'txt', 'csv', 'ods', 'xls', 'docx', 'jpeg'],
+            overwriteInitial: false,
+            initialPreviewAsData: true,
+            {% if(post.image) %}
+            initialPreview: [
+                \"{{ asset('uploads/articles/') }}{{ post.image }}\"
+            ],
+            {% endif %}
+        });
+    </script>
+{% endblock %}
+", ":posts:edit.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/edit.html.twig");
     }
 }

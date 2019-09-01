@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* includes/front/js.html.twig */
+/* :includes/front:js.html.twig */
 class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1f08fa extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -27,10 +27,10 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "includes/front/js.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":includes/front:js.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "includes/front/js.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":includes/front:js.html.twig"));
 
         // line 1
         echo "<script src=\"";
@@ -40,7 +40,7 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
         // line 2
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/front/uikit/uikit-icons.min.js"), "html", null, true);
         echo "\"></script>
-<script src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
+
 <script src=\"";
         // line 4
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/back/datatable/jquery-3.3.1.js"), "html", null, true);
@@ -77,24 +77,7 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
 
 
         \$(document).ready(function () {
-            \$(\"#kv-explorer\").fileinput({
-            'theme': 'explorer-fa',
-            'uploadUrl': '#',
-            language: 'fr',
-            allowedFileExtensions: ['jpg', 'png', 'gif', 'pdf', 'txt', 'csv', 'ods', 'xls', 'docx', 'jpeg'],
-            overwriteInitial: false,
-            initialPreviewAsData: true,
-            /*initialPreview: [
-                \"http://lorempixel.com/1920/1080/nature/1\",
-                \"http://lorempixel.com/1920/1080/nature/2\",
-                \"http://lorempixel.com/1920/1080/nature/3\"
-            ],
-            initialPreviewConfig: [
-                {caption: \"nature-1.jpg\", size: 329892, width: \"120px\", url: \"{\$url}\", key: 1},
-                {caption: \"nature-2.jpg\", size: 872378, width: \"120px\", url: \"{\$url}\", key: 2},
-                {caption: \"nature-3.jpg\", size: 632762, width: \"120px\", url: \"{\$url}\", key: 3}
-            ]*/
-        });
+            
                 \$('#zero_config').DataTable({
                     \"scrollCollapse\": true,
                     \"paging\": true,
@@ -129,7 +112,7 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
 
     public function getTemplateName()
     {
-        return "includes/front/js.html.twig";
+        return ":includes/front:js.html.twig";
     }
 
     public function isTraitable()
@@ -154,7 +137,7 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
     {
         return new Source("<script src=\"{{ asset('assets/front/uikit/uikit.min.js')}}\"></script>
 <script src=\"{{ asset('assets/front/uikit/uikit-icons.min.js')}}\"></script>
-<script src=\"https://code.jquery.com/jquery-3.2.1.min.js\"></script>
+
 <script src=\"{{ asset('assets/back/datatable/jquery-3.3.1.js')}}\"></script>
 <script src=\"{{ asset('assets/back/datatable/jquery.dataTables.min.js')}}\"></script>
 <script src=\"{{ asset('assets/back/datatable/dataTables.uikit.min.js')}}\"></script>
@@ -167,24 +150,7 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
 
 
         \$(document).ready(function () {
-            \$(\"#kv-explorer\").fileinput({
-            'theme': 'explorer-fa',
-            'uploadUrl': '#',
-            language: 'fr',
-            allowedFileExtensions: ['jpg', 'png', 'gif', 'pdf', 'txt', 'csv', 'ods', 'xls', 'docx', 'jpeg'],
-            overwriteInitial: false,
-            initialPreviewAsData: true,
-            /*initialPreview: [
-                \"http://lorempixel.com/1920/1080/nature/1\",
-                \"http://lorempixel.com/1920/1080/nature/2\",
-                \"http://lorempixel.com/1920/1080/nature/3\"
-            ],
-            initialPreviewConfig: [
-                {caption: \"nature-1.jpg\", size: 329892, width: \"120px\", url: \"{\$url}\", key: 1},
-                {caption: \"nature-2.jpg\", size: 872378, width: \"120px\", url: \"{\$url}\", key: 2},
-                {caption: \"nature-3.jpg\", size: 632762, width: \"120px\", url: \"{\$url}\", key: 3}
-            ]*/
-        });
+            
                 \$('#zero_config').DataTable({
                     \"scrollCollapse\": true,
                     \"paging\": true,
@@ -208,6 +174,6 @@ class __TwigTemplate_4615eea7ec2435115403a4593b10c43cad7f69354818c6e6f3e406078a1
         
 
     </script>
-", "includes/front/js.html.twig", "/var/www/html/ggscore/app/Resources/views/includes/front/js.html.twig");
+", ":includes/front:js.html.twig", "/var/www/html/ggscore/app/Resources/views/includes/front/js.html.twig");
     }
 }

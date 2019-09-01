@@ -46,7 +46,7 @@ class DefaultController extends Controller
 
         $competions = $em->getRepository('BackBundle:Competions')->findAll();
 
-        return $this->render('competions/indexFront.html.twig', array(
+        return $this->render('@Front/Default/navItems.html.twig', array(
             'competitions' => $competions,
         ));
     }

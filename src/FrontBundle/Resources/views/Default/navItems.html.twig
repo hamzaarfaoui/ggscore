@@ -1,10 +1,11 @@
-<div class="uk-navbar-item">
-    <form action="javascript:void(0)">
-        <select class="uk-select" name="langue">
-            {% for langue in langues %}
-                <option value="{{ langue.id }}">{{ langue.code }}</option>
+<li>
+    <a href="#">دوري الأبطال</a>
+    <div class="uk-navbar-dropdown">
+        <ul class="uk-nav uk-navbar-dropdown-nav">
+            {% for competition in competitions %}
+                <li><a href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay">{{ competition.title }}</a></li>
             {% endfor %}
-        </select>
-    </form>
-</div>
+        </ul>
+    </div>
+</li>
 

@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* posts/new.html.twig */
+/* :posts:new.html.twig */
 class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c94d16 extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -19,7 +19,9 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
         parent::__construct($env);
 
         $this->blocks = [
+            'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -32,12 +34,12 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/new.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:new.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "posts/new.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":posts:new.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "posts/new.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":posts:new.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -47,7 +49,29 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
 
     }
 
-    // line 3
+    // line 2
+    public function block_stylesheets($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 3
+        echo "    <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/front/bootstrap.min.css"), "html", null, true);
+        echo "\">
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -56,40 +80,39 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 6
         echo "    <div class=\"uk-margin\">
     <h1>Nouvel article</h1>
     
     ";
-        // line 7
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start');
+        // line 9
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start', ["attr" => ["enctype" => "multipart/form-data"]]);
         echo "
         <div class=\"uk-margin\">
             ";
-        // line 9
+        // line 11
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "title", []), 'widget', ["attr" => ["class" => "uk-input", "required" => "true"]]);
         echo "
         </div>
         <div class=\"uk-margin\">
             ";
-        // line 12
+        // line 14
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "content", []), 'widget', ["attr" => ["class" => "ckeditor", "required" => "true"]]);
         echo "
         </div>
         
         <div class=\"uk-margin\">
-            ";
-        // line 16
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "image", []), 'widget', ["attr" => ["id" => "kv-explorer"]]);
-        echo "
+            <div class=\"file-loading\">
+                <input id=\"kv-explorer\" class=\"file\" type=\"file\" name=\"image\">
+            </div>
         </div>
         <input type=\"submit\" class=\"uk-button uk-button-primary\" value=\"Enregistrer\" />
         <a href=\"";
-        // line 19
+        // line 23
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_posts_index");
         echo "\" class=\"uk-button uk-button-default\">Liste des articles</a>
     ";
-        // line 20
+        // line 24
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
     <br><br><br>
@@ -103,9 +126,55 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
 
     }
 
+    // line 28
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 29
+        echo "    <script src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("assets/front/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+    <script>
+        \$(\"#kv-explorer\").fileinput({
+            'theme': 'explorer-fa',
+            'uploadUrl': '#',
+            language: 'fr',
+            allowedFileExtensions: ['jpg', 'png', 'gif', 'pdf', 'txt', 'csv', 'ods', 'xls', 'docx', 'jpeg'],
+            overwriteInitial: false,
+            initialPreviewAsData: true,
+            ";
+        // line 38
+        if ($this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "image", [])) {
+            // line 39
+            echo "            initialPreview: [
+                \"";
+            // line 40
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("uploads/articles/"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "image", []), "html", null, true);
+            echo "\"
+            ],
+            ";
+        }
+        // line 43
+        echo "        });
+    </script>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
-        return "posts/new.html.twig";
+        return ":posts:new.html.twig";
     }
 
     public function isTraitable()
@@ -115,7 +184,7 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
 
     public function getDebugInfo()
     {
-        return array (  93 => 20,  89 => 19,  83 => 16,  76 => 12,  70 => 9,  65 => 7,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  164 => 43,  157 => 40,  154 => 39,  152 => 38,  139 => 29,  130 => 28,  116 => 24,  112 => 23,  100 => 14,  94 => 11,  89 => 9,  84 => 6,  75 => 5,  62 => 3,  53 => 2,  31 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -129,12 +198,14 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/front/bootstrap.min.css')}}\">
+{% endblock %}
 {% block body %}
     <div class=\"uk-margin\">
     <h1>Nouvel article</h1>
     
-    {{ form_start(form) }}
+    {{ form_start(form, { 'attr': {'enctype': 'multipart/form-data'} }) }}
         <div class=\"uk-margin\">
             {{ form_widget(form.title, {'attr': {'class': 'uk-input', 'required': 'true'},}) }}
         </div>
@@ -143,7 +214,9 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
         </div>
         
         <div class=\"uk-margin\">
-            {{ form_widget(form.image, {'attr': {'id': 'kv-explorer'},}) }}
+            <div class=\"file-loading\">
+                <input id=\"kv-explorer\" class=\"file\" type=\"file\" name=\"image\">
+            </div>
         </div>
         <input type=\"submit\" class=\"uk-button uk-button-primary\" value=\"Enregistrer\" />
         <a href=\"{{ path('admin_posts_index') }}\" class=\"uk-button uk-button-default\">Liste des articles</a>
@@ -151,6 +224,24 @@ class __TwigTemplate_5a9ff01fd9ef8b7665915d9fc3f715aa1b98d5e7610146fce533de72e5c
     <br><br><br>
     </div>
 {% endblock %}
-", "posts/new.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/new.html.twig");
+{% block javascripts %}
+    <script src=\"{{ asset('assets/front/bootstrap.min.js')}}\"></script>
+    <script>
+        \$(\"#kv-explorer\").fileinput({
+            'theme': 'explorer-fa',
+            'uploadUrl': '#',
+            language: 'fr',
+            allowedFileExtensions: ['jpg', 'png', 'gif', 'pdf', 'txt', 'csv', 'ods', 'xls', 'docx', 'jpeg'],
+            overwriteInitial: false,
+            initialPreviewAsData: true,
+            {% if(post.image) %}
+            initialPreview: [
+                \"{{ asset('uploads/articles/') }}{{ post.image }}\"
+            ],
+            {% endif %}
+        });
+    </script>
+{% endblock %}
+", ":posts:new.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/new.html.twig");
     }
 }

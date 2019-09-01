@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* competions/show.html.twig */
+/* :competions:show.html.twig */
 class __TwigTemplate_4a17209a6327d39c4fe911dd55ee195deff89e6666157ccd62f4bf7cf78fa017 extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -32,12 +32,12 @@ class __TwigTemplate_4a17209a6327d39c4fe911dd55ee195deff89e6666157ccd62f4bf7cf78
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "competions/show.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":competions:show.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "competions/show.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":competions:show.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "competions/show.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":competions:show.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -167,7 +167,7 @@ class __TwigTemplate_4a17209a6327d39c4fe911dd55ee195deff89e6666157ccd62f4bf7cf78
 
     public function getTemplateName()
     {
-        return "competions/show.html.twig";
+        return ":competions:show.html.twig";
     }
 
     public function isTraitable()
@@ -245,6 +245,6 @@ class __TwigTemplate_4a17209a6327d39c4fe911dd55ee195deff89e6666157ccd62f4bf7cf78
     </ul>
     </div>
 {% endblock %}
-", "competions/show.html.twig", "/var/www/html/ggscore/app/Resources/views/competions/show.html.twig");
+", ":competions:show.html.twig", "/var/www/html/ggscore/app/Resources/views/competions/show.html.twig");
     }
 }

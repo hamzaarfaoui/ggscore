@@ -206,7 +206,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 }
 
                 // admin_posts_delete
-                if (preg_match('#^/admin/posts/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                if (0 === strpos($pathinfo, '/admin/posts/delete') && preg_match('#^/admin/posts/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_posts_delete']), array (  '_controller' => 'BackBundle\\Controller\\PostsController::deleteAction',));
                 }
 
@@ -264,6 +264,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_fos_user_change_password:
 
+        }
+
+        // competitions_show
+        if (0 === strpos($pathinfo, '/competition-details') && preg_match('#^/competition\\-details/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'competitions_show']), array (  '_controller' => 'FrontBundle\\Controller\\DefaultController::showcompetitionAction',));
+        }
+
+        // levels_show
+        if (0 === strpos($pathinfo, '/competition-levels') && preg_match('#^/competition\\-levels/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, ['_route' => 'levels_show']), array (  '_controller' => 'FrontBundle\\Controller\\DefaultController::showLevelAction',));
         }
 
         // user_homepage
