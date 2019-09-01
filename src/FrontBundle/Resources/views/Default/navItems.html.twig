@@ -8,4 +8,14 @@
         </ul>
     </div>
 </li>
+<li>
+    <a href="#">دوريات محلية</a>
+    <div class="uk-navbar-dropdown">
+        <ul class="uk-nav uk-navbar-dropdown-nav">
+            {% for competition in ligues %}
+                <li><a href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay">{{ competition.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</li>
 

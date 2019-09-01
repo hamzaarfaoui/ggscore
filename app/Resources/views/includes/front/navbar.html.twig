@@ -1,39 +1,33 @@
-<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
-    <nav class="uk-navbar-container" uk-navbar  style="position: relative; z-index: 980;background-color: #212121;height: 50px;">
-
-        <div class="uk-navbar-left">
-
-            <ul class="uk-navbar-nav">
-                <li class="uk-active">
-                    <a href="{{ path('front_homepage') }}"><img src="{{ asset('ggs.png') }}" /></a>
-                </li>
+     
+<nav class="uk-navbar uk-navbar-container uk-box-shadow-medium uk-hidden@m" id="menu" uk-navbar style="position: relative; z-index: 980;background-color: #212121;height: 50px;">
+    <div class="uk-navbar-left">
+        <a class="uk-navbar-toggle" href="#" uk-toggle="target: #menu-mobile">
+            <span uk-navbar-toggle-icon></span>
+        </a>
+    </div>
+    <div class="uk-navbar-center">
+        <a href="/" class="uk-navbar-item uk-logo"><a href="{{ path('front_homepage') }}"><img src="{{ asset('ggs.png') }}" /></a></a>
+    </div>
+</nav>
+<div class="uk-offcanvas-content">
+    <div id="menu-mobile" uk-offcanvas="mode: push; overlay: true">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <ul uk-accordion>
+                {{ render(controller(
+                        'FrontBundle:Default:competitionsResponsive'
+                    )) }}
             </ul>
-
         </div>
-
-        <div class="uk-navbar-center">
-
-            <ul class="uk-navbar-nav">
-               {# <li class="uk-active"><a href="#">Active</a></li>
-                <li>
-                    <a href="#">Parent</a>
-                    <div class="uk-navbar-dropdown">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="#" class="text-overlay">Active</a></li>
-                            <li><a href="#" class="text-overlay">Item</a></li>
-                            <li><a href="#" class="text-overlay">Item</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">Item</a></li>#}
+</div>
+<!-- Menu desktop -->
+<nav class="uk-navbar uk-navbar-container uk-box-shadow-medium uk-visible@l" id="menu" uk-navbar style="position: relative; z-index: 980;background-color: #212121;height: 50px;">
+    <div class="uk-navbar-center">
+        <a href="/" class="uk-navbar-item uk-logo"><a href="{{ path('front_homepage') }}"><img src="{{ asset('ggs.png') }}" /></a></a>
+        <ul class="uk-navbar-nav">
             {{ render(controller(
                         'FrontBundle:Default:competitions'
                     )) }}
-            </ul>
-            {#{{ render(controller('FrontBundle:Default:navbarItems')) }}#}
-            
-
-        </div>
-
-    </nav>
-</div>
+        </ul>
+    </div>
+</nav>

@@ -57,6 +57,30 @@ class __TwigTemplate_0c3760fecf6b55d25062d88145e7a2ce0c056cd6441e4c007468b95a7a5
         echo "        </ul>
     </div>
 </li>
+<li>
+    <a href=\"#\">دوريات محلية</a>
+    <div class=\"uk-navbar-dropdown\">
+        <ul class=\"uk-nav uk-navbar-dropdown-nav\">
+            ";
+        // line 15
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["ligues"] ?? $this->getContext($context, "ligues")));
+        foreach ($context['_seq'] as $context["_key"] => $context["competition"]) {
+            // line 16
+            echo "                <li><a href=\"";
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("competitions_show", ["id" => $this->getAttribute($context["competition"], "id", [])]), "html", null, true);
+            echo "\" class=\"text-overlay\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["competition"], "title", []), "html", null, true);
+            echo "</a></li>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['competition'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 18
+        echo "        </ul>
+    </div>
+</li>
 
 ";
         
@@ -79,7 +103,7 @@ class __TwigTemplate_0c3760fecf6b55d25062d88145e7a2ce0c056cd6441e4c007468b95a7a5
 
     public function getDebugInfo()
     {
-        return array (  57 => 8,  46 => 6,  42 => 5,  36 => 1,);
+        return array (  81 => 18,  70 => 16,  66 => 15,  57 => 8,  46 => 6,  42 => 5,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -97,6 +121,16 @@ class __TwigTemplate_0c3760fecf6b55d25062d88145e7a2ce0c056cd6441e4c007468b95a7a5
     <div class=\"uk-navbar-dropdown\">
         <ul class=\"uk-nav uk-navbar-dropdown-nav\">
             {% for competition in competitions %}
+                <li><a href=\"{{ path('competitions_show', {id:competition.id}) }}\" class=\"text-overlay\">{{ competition.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</li>
+<li>
+    <a href=\"#\">دوريات محلية</a>
+    <div class=\"uk-navbar-dropdown\">
+        <ul class=\"uk-nav uk-navbar-dropdown-nav\">
+            {% for competition in ligues %}
                 <li><a href=\"{{ path('competitions_show', {id:competition.id}) }}\" class=\"text-overlay\">{{ competition.title }}</a></li>
             {% endfor %}
         </ul>

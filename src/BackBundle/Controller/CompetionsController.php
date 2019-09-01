@@ -45,6 +45,7 @@ class CompetionsController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $competion->setStatus($request->get('status'));
             $em->persist($competion);
             $em->flush();
 
@@ -86,8 +87,11 @@ class CompetionsController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
+            $em = $this->getDoctrine()->getManager();
+            
+            $competion->setStatus($request->get('status'));
+            $em->persist($competion);
+            $em->flush();
             return $this->redirectToRoute('admin_competitions_edit', array('id' => $competion->getId()));
         }
 

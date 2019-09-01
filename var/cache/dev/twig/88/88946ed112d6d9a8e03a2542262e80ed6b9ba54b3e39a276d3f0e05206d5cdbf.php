@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* :competions:edit.html.twig */
+/* competions/edit.html.twig */
 class __TwigTemplate_fac0334a0eb6599b7a076fe58a189e47743c250feaab9276da0c0a5b695468a1 extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -32,12 +32,12 @@ class __TwigTemplate_fac0334a0eb6599b7a076fe58a189e47743c250feaab9276da0c0a5b695
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":competions:edit.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "competions/edit.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":competions:edit.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "competions/edit.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", ":competions:edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "competions/edit.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -67,27 +67,37 @@ class __TwigTemplate_fac0334a0eb6599b7a076fe58a189e47743c250feaab9276da0c0a5b695
         // line 7
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(($context["edit_form"] ?? $this->getContext($context, "edit_form")), 'widget');
         echo "
+        <div class=\"uk-margin uk-grid-small uk-child-width-auto uk-grid\">
+            <label><input class=\"uk-radio\" type=\"radio\" name=\"status\" ";
+        // line 9
+        echo ((($this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "status", []) != 2)) ? ("checked") : (""));
+        echo " value=\"1\"> Conféderation</label>
+            <label><input class=\"uk-radio\" type=\"radio\" name=\"status\" ";
+        // line 10
+        echo ((($this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "status", []) == 2)) ? ("checked") : (""));
+        echo " value=\"2\"> Ligue</label>
+        </div>
         <input type=\"submit\" value=\"Edit\" />
     ";
-        // line 9
+        // line 13
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["edit_form"] ?? $this->getContext($context, "edit_form")), 'form_end');
         echo "
 
     <ul>
         <li>
             <a href=\"";
-        // line 13
+        // line 17
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_competitions_index");
         echo "\">Back to the list</a>
         </li>
         <li>
             ";
-        // line 16
+        // line 20
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_start');
         echo "
                 <input type=\"submit\" value=\"Delete\">
             ";
-        // line 18
+        // line 22
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_end');
         echo "
         </li>
@@ -103,7 +113,7 @@ class __TwigTemplate_fac0334a0eb6599b7a076fe58a189e47743c250feaab9276da0c0a5b695
 
     public function getTemplateName()
     {
-        return ":competions:edit.html.twig";
+        return "competions/edit.html.twig";
     }
 
     public function isTraitable()
@@ -113,7 +123,7 @@ class __TwigTemplate_fac0334a0eb6599b7a076fe58a189e47743c250feaab9276da0c0a5b695
 
     public function getDebugInfo()
     {
-        return array (  91 => 18,  86 => 16,  80 => 13,  73 => 9,  68 => 7,  64 => 6,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  101 => 22,  96 => 20,  90 => 17,  83 => 13,  77 => 10,  73 => 9,  68 => 7,  64 => 6,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -133,6 +143,10 @@ class __TwigTemplate_fac0334a0eb6599b7a076fe58a189e47743c250feaab9276da0c0a5b695
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
+        <div class=\"uk-margin uk-grid-small uk-child-width-auto uk-grid\">
+            <label><input class=\"uk-radio\" type=\"radio\" name=\"status\" {{ competion.status !=2?'checked':'' }} value=\"1\"> Conféderation</label>
+            <label><input class=\"uk-radio\" type=\"radio\" name=\"status\" {{ competion.status ==2?'checked':'' }} value=\"2\"> Ligue</label>
+        </div>
         <input type=\"submit\" value=\"Edit\" />
     {{ form_end(edit_form) }}
 
@@ -147,6 +161,6 @@ class __TwigTemplate_fac0334a0eb6599b7a076fe58a189e47743c250feaab9276da0c0a5b695
         </li>
     </ul>
 {% endblock %}
-", ":competions:edit.html.twig", "/var/www/html/ggscore/app/Resources/views/competions/edit.html.twig");
+", "competions/edit.html.twig", "/var/www/html/ggscore/app/Resources/views/competions/edit.html.twig");
     }
 }

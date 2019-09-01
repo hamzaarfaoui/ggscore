@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Competions
 {
+    const IS_CONFEDRATION = 1;
+    const IS_LIGUE = 2;
+    
     /**
      * @var int
      *
@@ -40,6 +43,13 @@ class Competions
      * @ORM\Column(name="content", type="text", nullable=true)
      */
     private $content;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="integer", nullable=true)
+     */
+    private $status;
 
 
     /**
@@ -86,6 +96,30 @@ class Competions
     public function setContent($content)
     {
         $this->content = $content;
+
+        return $this;
+    }
+    
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     *
+     * @return Competions
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
 
         return $this;
     }

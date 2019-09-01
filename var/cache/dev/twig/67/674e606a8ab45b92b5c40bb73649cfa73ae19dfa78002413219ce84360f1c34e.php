@@ -59,27 +59,20 @@ class __TwigTemplate_7f541f93804d64ed986f7919f12fb278641fa48338316dc14ae6282afaa
         // line 4
         echo "    ";
         // line 15
-        echo "    <div class=\"uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin\" uk-grid>
-        <div class=\"uk-card-media-left uk-cover-container\">
-            <img src=\"";
-        // line 17
+        echo "    ";
+        // line 27
+        echo "    <div class=\"uk-panel\">
+        <img class=\"uk-align-left uk-margin-remove-adjacent\" src=\"";
+        // line 28
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("uploads/articles/"), "html", null, true);
         echo twig_escape_filter($this->env, $this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "image", []), "html", null, true);
-        echo "\">
-            <canvas width=\"600\" height=\"400\"></canvas>
-        </div>
-        <div>
-            <div class=\"uk-card-body\">
-                <h3 class=\"uk-card-title\" style=\"text-align: right;\">";
-        // line 22
+        echo "\" width=\"600\" height=\"400\" alt=\"";
         echo twig_escape_filter($this->env, $this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "title", []), "html", null, true);
-        echo "</h3>
-                <p style=\"text-align: justify; float: left;\">";
-        // line 23
+        echo "\">
+        <p>";
+        // line 29
         echo $this->getAttribute(($context["post"] ?? $this->getContext($context, "post")), "content", []);
         echo "</p>
-            </div>
-        </div>
     </div>
 ";
         
@@ -102,7 +95,7 @@ class __TwigTemplate_7f541f93804d64ed986f7919f12fb278641fa48338316dc14ae6282afaa
 
     public function getDebugInfo()
     {
-        return array (  79 => 23,  75 => 22,  66 => 17,  62 => 15,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  74 => 29,  67 => 28,  64 => 27,  62 => 15,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -129,7 +122,7 @@ class __TwigTemplate_7f541f93804d64ed986f7919f12fb278641fa48338316dc14ae6282afaa
             </div>
         </div>
     </div>#}
-    <div class=\"uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin\" uk-grid>
+    {#<div class=\"uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin\" uk-grid>
         <div class=\"uk-card-media-left uk-cover-container\">
             <img src=\"{{ asset('uploads/articles/') }}{{ post.image }}\">
             <canvas width=\"600\" height=\"400\"></canvas>
@@ -140,6 +133,10 @@ class __TwigTemplate_7f541f93804d64ed986f7919f12fb278641fa48338316dc14ae6282afaa
                 <p style=\"text-align: justify; float: left;\">{{ post.content|raw }}</p>
             </div>
         </div>
+    </div>#}
+    <div class=\"uk-panel\">
+        <img class=\"uk-align-left uk-margin-remove-adjacent\" src=\"{{ asset('uploads/articles/') }}{{ post.image }}\" width=\"600\" height=\"400\" alt=\"{{ post.title }}\">
+        <p>{{ post.content|raw }}</p>
     </div>
 {% endblock %}
 ", "posts/showInFront.html.twig", "/var/www/html/ggscore/app/Resources/views/posts/showInFront.html.twig");

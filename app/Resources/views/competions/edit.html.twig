@@ -5,6 +5,10 @@
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-radio" type="radio" name="status" {{ competion.status !=2?'checked':'' }} value="1"> Conféderation</label>
+            <label><input class="uk-radio" type="radio" name="status" {{ competion.status ==2?'checked':'' }} value="2"> Ligue</label>
+        </div>
         <input type="submit" value="Edit" />
     {{ form_end(edit_form) }}
 

@@ -44,10 +44,26 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $competions = $em->getRepository('BackBundle:Competions')->findAll();
+        $confedrations = $em->getRepository('BackBundle:Competions')->findBy(array('status' => 1));
+        $ligue = $em->getRepository('BackBundle:Competions')->findBy(array('status' => 2));
 
         return $this->render('@Front/Default/navItems.html.twig', array(
-            'competitions' => $competions,
+            'competitions' => $confedrations,
+            'ligues' => $ligue
+        ));
+    }
+    
+    //in respnsive view
+    public function competitionsResponsiveAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $confedrations = $em->getRepository('BackBundle:Competions')->findBy(array('status' => 1));
+        $ligue = $em->getRepository('BackBundle:Competions')->findBy(array('status' => 2));
+
+        return $this->render('@Front/Default/navItemsResponsive.html.twig', array(
+            'competitions' => $confedrations,
+            'ligues' => $ligue
         ));
     }
     
