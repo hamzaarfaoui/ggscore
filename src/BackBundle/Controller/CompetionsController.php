@@ -46,6 +46,12 @@ class CompetionsController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $competion->setStatus($request->get('status'));
+            if(!empty($request->get('content'))){
+                $competion->setContent($request->get('content'));
+            }
+            if(!empty($request->get('contentClassement'))){
+                $competion->setContentClassement($request->get('contentClassement'));
+            }
             $em->persist($competion);
             $em->flush();
 
@@ -90,6 +96,12 @@ class CompetionsController extends Controller
             $em = $this->getDoctrine()->getManager();
             
             $competion->setStatus($request->get('status'));
+            if(!empty($request->get('content'))){
+                $competion->setContent($request->get('content'));
+            }
+            if(!empty($request->get('contentClassement'))){
+                $competion->setContentClassement($request->get('contentClassement'));
+            }
             $em->persist($competion);
             $em->flush();
             return $this->redirectToRoute('admin_competitions_edit', array('id' => $competion->getId()));

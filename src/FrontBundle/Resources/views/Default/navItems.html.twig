@@ -1,14 +1,17 @@
-<li>
+<li class="uk-align-right">
     <a href="#">دوري الأبطال</a>
     <div class="uk-navbar-dropdown">
         <ul class="uk-nav uk-navbar-dropdown-nav">
             {% for competition in competitions %}
-                <li><a href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay">{{ competition.title }}</a></li>
+                <li><a href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay">
+                        {{ competition.title }}
+                    </a>
+                </li>
             {% endfor %}
         </ul>
     </div>
 </li>
-<li>
+<li class="uk-align-right">
     <a href="#">دوريات محلية</a>
     <div class="uk-navbar-dropdown">
         <ul class="uk-nav uk-navbar-dropdown-nav">

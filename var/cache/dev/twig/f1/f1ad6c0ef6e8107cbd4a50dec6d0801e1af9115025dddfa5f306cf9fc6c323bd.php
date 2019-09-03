@@ -50,7 +50,7 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
     </div>
 </nav>
 <div class=\"uk-offcanvas-content\">
-    <div id=\"menu-mobile\" uk-offcanvas=\"mode: push; overlay: true\">
+    <div id=\"menu-mobile\" uk-offcanvas=\"mode: push; overlay: true;flip: true\">
         <div class=\"uk-offcanvas-bar\">
             <button class=\"uk-offcanvas-close\" type=\"button\" uk-close></button>
             <ul uk-accordion>
@@ -125,7 +125,7 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
     </div>
 </nav>
 <div class=\"uk-offcanvas-content\">
-    <div id=\"menu-mobile\" uk-offcanvas=\"mode: push; overlay: true\">
+    <div id=\"menu-mobile\" uk-offcanvas=\"mode: push; overlay: true;flip: true\">
         <div class=\"uk-offcanvas-bar\">
             <button class=\"uk-offcanvas-close\" type=\"button\" uk-close></button>
             <ul uk-accordion>

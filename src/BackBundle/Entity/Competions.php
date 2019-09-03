@@ -45,6 +45,13 @@ class Competions
     private $content;
     
     /**
+     * @var string
+     *
+     * @ORM\Column(name="contentClassement", type="text", nullable=true)
+     */
+    private $contentClassement;
+    
+    /**
      * @var integer
      *
      * @ORM\Column(name="status", type="integer", nullable=true)
@@ -101,6 +108,40 @@ class Competions
     }
     
     /**
+     * Get contentClassement
+     *
+     * @return string
+     */
+    public function getContentClassement()
+    {
+        return $this->contentClassement;
+    }
+    
+    /**
+     * Set contentClassement
+     *
+     * @param string $contentClassement
+     *
+     * @return Competions
+     */
+    public function setContentClassement($contentClassement)
+    {
+        $this->contentClassement = $contentClassement;
+
+        return $this;
+    }
+    
+    /**
+     * Get content
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+    
+    /**
      * Get title
      *
      * @return string
@@ -124,15 +165,7 @@ class Competions
         return $this;
     }
 
-    /**
-     * Get content
-     *
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
+    
     /**
      * Constructor
      */

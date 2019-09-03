@@ -9,6 +9,16 @@
             <label><input class="uk-radio" type="radio" name="status" {{ competion.status !=2?'checked':'' }} value="1"> Conféderation</label>
             <label><input class="uk-radio" type="radio" name="status" {{ competion.status ==2?'checked':'' }} value="2"> Ligue</label>
         </div>
+        <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+            <div>
+                <b>Journée</b>
+                <textarea name="content" class="ckeditor"></textarea>
+            </div>
+            <div>
+                <b>Classement</b>
+                <textarea name="contentClassement" class="ckeditor"></textarea>
+            </div>
+        </div>
         <input type="submit" value="Edit" />
     {{ form_end(edit_form) }}
 
@@ -22,4 +32,14 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $('#ligue').change(function() {
+            if($('#ligue').is(':checked')) { $('#content').show(); }
+         });
+         $('#confedration').change(function() {
+            if($('#confedration').is(':checked')) { $('#content').hide(); }
+         });
+    </script>
 {% endblock %}

@@ -1,19 +1,46 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="uk-child-width-1-1@m" uk-grid>
-        <div class="uk-inline uk-margin">
-            <div class="uk-position-right uk-overlay uk-overlay-default">
-                <h4>{{ competion.title }}</h4>
-                <ul uk-accordion>
-                    {% for level in competion.levels %}
-                        <li>
-                            <a class="uk-accordion-title" href="#">{{ level.title }}</a>
-                            <div class="uk-accordion-content">{{ level.content }}</div>
-                        </li>
-                    {% endfor %}
-                </ul>
+
+    {% if(competion.status == 1) %}
+        <div class="uk-child-width-1-1@m" uk-grid>
+            <div class="uk-inline uk-margin">
+                <div class="uk-position-right uk-overlay uk-overlay-default">
+                    <h4>{{ competion.title }}</h4>
+
+                    <ul uk-accordion>
+                        {% for level in competion.levels %}
+                            <li>
+                                <a class="uk-accordion-title" href="#">{{ level.title }}</a>
+                                <div class="uk-accordion-content">{{ level.content }}</div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
             </div>
         </div>
-    </div>
+    {% elseif(competion.status == 2) %}
+        <div class="uk-child-width-1-1@m" uk-grid>
+            <div class="uk-inline uk-margin">
+                <div class="uk-margin uk-card uk-card-default uk-card-body">
+                    <div class="uk-position-right uk-overlay uk-overlay-default">
+                        <h4>{{ competion.title }}</h4>
+                    </div>
+                </div>
+                <div class="uk-child-width-1-2 uk-text-center" uk-grid>
+                    <div>
+                        <div class="uk-margin uk-card uk-card-default uk-card-body">
+                            {{ competion.contentClassement|raw }}
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-margin uk-card uk-card-default uk-card-body">
+                            {{ competion.content|raw }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

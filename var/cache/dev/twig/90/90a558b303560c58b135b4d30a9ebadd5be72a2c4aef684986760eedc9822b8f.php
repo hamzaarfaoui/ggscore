@@ -57,41 +57,83 @@ class __TwigTemplate_721f5d12da516f3c4a174af872da5ca735a00ad3fb06e54f785e2e3abec
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <div class=\"uk-child-width-1-1@m\" uk-grid>
-        <div class=\"uk-inline uk-margin\">
-            <div class=\"uk-position-right uk-overlay uk-overlay-default\">
-                <h4>";
-        // line 7
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "title", []), "html", null, true);
-        echo "</h4>
-                <ul uk-accordion>
-                    ";
-        // line 9
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "levels", []));
-        foreach ($context['_seq'] as $context["_key"] => $context["level"]) {
-            // line 10
-            echo "                        <li>
-                            <a class=\"uk-accordion-title\" href=\"#\">";
-            // line 11
-            echo twig_escape_filter($this->env, $this->getAttribute($context["level"], "title", []), "html", null, true);
-            echo "</a>
-                            <div class=\"uk-accordion-content\">";
+        echo "
+    ";
+        // line 5
+        if (($this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "status", []) == 1)) {
+            // line 6
+            echo "        <div class=\"uk-child-width-1-1@m\" uk-grid>
+            <div class=\"uk-inline uk-margin\">
+                <div class=\"uk-position-right uk-overlay uk-overlay-default\">
+                    <h4>";
+            // line 9
+            echo twig_escape_filter($this->env, $this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "title", []), "html", null, true);
+            echo "</h4>
+
+                    <ul uk-accordion>
+                        ";
             // line 12
-            echo twig_escape_filter($this->env, $this->getAttribute($context["level"], "content", []), "html", null, true);
-            echo "</div>
-                        </li>
-                    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['level'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 15
-        echo "                </ul>
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "levels", []));
+            foreach ($context['_seq'] as $context["_key"] => $context["level"]) {
+                // line 13
+                echo "                            <li>
+                                <a class=\"uk-accordion-title\" href=\"#\">";
+                // line 14
+                echo twig_escape_filter($this->env, $this->getAttribute($context["level"], "title", []), "html", null, true);
+                echo "</a>
+                                <div class=\"uk-accordion-content\">";
+                // line 15
+                echo twig_escape_filter($this->env, $this->getAttribute($context["level"], "content", []), "html", null, true);
+                echo "</div>
+                            </li>
+                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['level'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 18
+            echo "                    </ul>
+
+                </div>
             </div>
         </div>
-    </div>
-";
+    ";
+        } elseif (($this->getAttribute(        // line 23
+($context["competion"] ?? $this->getContext($context, "competion")), "status", []) == 2)) {
+            // line 24
+            echo "        <div class=\"uk-child-width-1-1@m\" uk-grid>
+            <div class=\"uk-inline uk-margin\">
+                <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
+                    <div class=\"uk-position-right uk-overlay uk-overlay-default\">
+                        <h4>";
+            // line 28
+            echo twig_escape_filter($this->env, $this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "title", []), "html", null, true);
+            echo "</h4>
+                    </div>
+                </div>
+                    <div class=\"uk-child-width-1-2 uk-text-center\" uk-grid>
+                        <div>
+                            <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
+                                ";
+            // line 34
+            echo $this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "contentClassement", []);
+            echo "
+                            </div>
+                        </div>
+                        <div>
+                            <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
+                                ";
+            // line 39
+            echo $this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "content", []);
+            echo "
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    ";
+        }
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -112,7 +154,7 @@ class __TwigTemplate_721f5d12da516f3c4a174af872da5ca735a00ad3fb06e54f785e2e3abec
 
     public function getDebugInfo()
     {
-        return array (  90 => 15,  81 => 12,  77 => 11,  74 => 10,  70 => 9,  65 => 7,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  128 => 39,  120 => 34,  111 => 28,  105 => 24,  103 => 23,  96 => 18,  87 => 15,  83 => 14,  80 => 13,  76 => 12,  70 => 9,  65 => 6,  63 => 5,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -128,21 +170,48 @@ class __TwigTemplate_721f5d12da516f3c4a174af872da5ca735a00ad3fb06e54f785e2e3abec
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class=\"uk-child-width-1-1@m\" uk-grid>
-        <div class=\"uk-inline uk-margin\">
-            <div class=\"uk-position-right uk-overlay uk-overlay-default\">
-                <h4>{{ competion.title }}</h4>
-                <ul uk-accordion>
-                    {% for level in competion.levels %}
-                        <li>
-                            <a class=\"uk-accordion-title\" href=\"#\">{{ level.title }}</a>
-                            <div class=\"uk-accordion-content\">{{ level.content }}</div>
-                        </li>
-                    {% endfor %}
-                </ul>
+
+    {% if(competion.status == 1) %}
+        <div class=\"uk-child-width-1-1@m\" uk-grid>
+            <div class=\"uk-inline uk-margin\">
+                <div class=\"uk-position-right uk-overlay uk-overlay-default\">
+                    <h4>{{ competion.title }}</h4>
+
+                    <ul uk-accordion>
+                        {% for level in competion.levels %}
+                            <li>
+                                <a class=\"uk-accordion-title\" href=\"#\">{{ level.title }}</a>
+                                <div class=\"uk-accordion-content\">{{ level.content }}</div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
             </div>
         </div>
-    </div>
+    {% elseif(competion.status == 2) %}
+        <div class=\"uk-child-width-1-1@m\" uk-grid>
+            <div class=\"uk-inline uk-margin\">
+                <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
+                    <div class=\"uk-position-right uk-overlay uk-overlay-default\">
+                        <h4>{{ competion.title }}</h4>
+                    </div>
+                </div>
+                    <div class=\"uk-child-width-1-2 uk-text-center\" uk-grid>
+                        <div>
+                            <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
+                                {{ competion.contentClassement|raw }}
+                            </div>
+                        </div>
+                        <div>
+                            <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
+                                {{ competion.content|raw }}
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
 ", "competions/showFront.html.twig", "/var/www/html/ggscore/app/Resources/views/competions/showFront.html.twig");
     }
