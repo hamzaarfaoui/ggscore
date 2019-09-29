@@ -59,10 +59,11 @@ class PostsController extends Controller
              }
             $post->setCreatedAt(new \DateTime('now'));
             $post->setUpdatedAt(new \DateTime('now'));
+            $post->setIsVertical($request->get('representation'));
             $em->persist($post);
             $em->flush();
             $request->getSession()->getFlashBag()->add('success', "Article ajouté");
-            return $this->redirectToRoute('admin_posts_show', array('id' => $post->getId()));
+            return $this->redirectToRoute('admin_posts_edit', array('id' => $post->getId()));
         }
 
         return $this->render('posts/new.html.twig', array(
@@ -113,6 +114,7 @@ class PostsController extends Controller
                 $post->setImage($fileName);
              }
              
+            $post->setIsVertical($request->get('representation'));
             $post->setUpdatedAt(new \DateTime('now'));
             $em->persist($post);
             $em->flush();

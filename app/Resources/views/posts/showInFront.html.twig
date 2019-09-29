@@ -24,8 +24,28 @@
             </div>
         </div>
     </div>#}
-    <div class="uk-panel">
-        <img class="uk-align-left uk-margin-remove-adjacent" src="{{ asset('uploads/articles/') }}{{ post.image }}" width="600" height="400" alt="{{ post.title }}">
-        <p>{{ post.content|raw }}</p>
-    </div>
+    {% if(post.isVertical == 1) %}
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <img class="img-v" src="{{ asset('uploads/articles/') }}{{ post.image }}" alt="">
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title" style="text-align: center;">{{ post.title }}</h3>
+                <p style="text-align: center;">{{ post.content|raw }}</p>
+            </div>
+        </div>
+    {% elseif(post.isVertical == 0) %}
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+            <div class="uk-card-media-left uk-cover-container">
+                <img src="{{ asset('uploads/articles/') }}{{ post.image }}" alt="" uk-cover>
+                <canvas width="600" height="400"></canvas>
+            </div>
+            <div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title" style="text-align: right;">{{ post.title|raw }}</h3>
+                    <p>{{ post.content|raw }}</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

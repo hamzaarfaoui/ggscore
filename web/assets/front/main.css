@@ -15,4 +15,21 @@
 txt-img-post{
     width: 50%;
 }
-
+@media only screen and (min-width: 600px) {
+    .uk-navbar-nav>li>a {
+        margin-top: 23px;
+        color: #999;
+        text-transform: uppercase;
+        transition: .1s ease-in-out;
+        transition-property: color,background-color;
+    }
+    .img-v{
+        margin-left: 23%;
+    }
+    
+}
+@media only screen and (max-width: 600px) {
+.uk-container {
+        direction: rtl;
+      }
+}

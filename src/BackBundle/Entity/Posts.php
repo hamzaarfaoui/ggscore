@@ -47,6 +47,20 @@ class Posts
      * @ORM\Column(name="image", type="string", length=255, nullable=true)
      */
     private $image;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="isVertical", type="integer", nullable=true)
+     */
+    private $isVertical;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="isLeft", type="integer", nullable=true)
+     */
+    private $isLeft;
 
     /**
      * @var \DateTime
@@ -215,5 +229,53 @@ class Posts
     public function getLangue()
     {
         return $this->langue;
+    }
+
+    /**
+     * Set isVertical
+     *
+     * @param integer $isVertical
+     *
+     * @return Posts
+     */
+    public function setIsVertical($isVertical)
+    {
+        $this->isVertical = $isVertical;
+
+        return $this;
+    }
+
+    /**
+     * Get isVertical
+     *
+     * @return integer
+     */
+    public function getIsVertical()
+    {
+        return $this->isVertical;
+    }
+
+    /**
+     * Set isLeft
+     *
+     * @param integer $isLeft
+     *
+     * @return Posts
+     */
+    public function setIsLeft($isLeft)
+    {
+        $this->isLeft = $isLeft;
+
+        return $this;
+    }
+
+    /**
+     * Get isLeft
+     *
+     * @return integer
+     */
+    public function getIsLeft()
+    {
+        return $this->isLeft;
     }
 }

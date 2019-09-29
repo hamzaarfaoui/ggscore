@@ -14,6 +14,10 @@
             {{ form_widget(form.content, {'attr': {'class': 'ckeditor', 'required': 'true'},}) }}
         </div>
         
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-radio" type="radio" name="representation" value="1" {{post.isVertical == 1?'checked':''}}> Vérticale</label>
+            <label><input class="uk-radio" type="radio" name="representation" value="0" {{post.isVertical == 0?'checked':''}}> Horizansale</label>
+        </div>
         <div class="uk-margin">
             <div class="file-loading">
                 <input id="kv-explorer" class="file" type="file" name="image">
