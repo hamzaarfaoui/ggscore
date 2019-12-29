@@ -45,7 +45,7 @@ class __TwigTemplate_06cbadb0b38c534278dd3f2fd72353bc91acc8269dc5aa139b1c24a9b5d
             // line 6
             echo "                <li><a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("competitions_show", ["id" => $this->getAttribute($context["competition"], "id", [])]), "html", null, true);
-            echo "\" class=\"text-overlay\">";
+            echo "\" class=\"text-overlay uk-text-right\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["competition"], "title", []), "html", null, true);
             echo "</a></li>
             ";
@@ -69,7 +69,7 @@ class __TwigTemplate_06cbadb0b38c534278dd3f2fd72353bc91acc8269dc5aa139b1c24a9b5d
             // line 16
             echo "                <li><a href=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("competitions_show", ["id" => $this->getAttribute($context["competition"], "id", [])]), "html", null, true);
-            echo "\" class=\"text-overlay\">";
+            echo "\" class=\"text-overlay uk-text-right\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["competition"], "title", []), "html", null, true);
             echo "</a></li>
             ";
@@ -121,7 +121,7 @@ class __TwigTemplate_06cbadb0b38c534278dd3f2fd72353bc91acc8269dc5aa139b1c24a9b5d
     <div class=\"uk-accordion-content\">
         <ul class=\"uk-list uk-list-divider\">
             {% for competition in competitions %}
-                <li><a href=\"{{ path('competitions_show', {id:competition.id}) }}\" class=\"text-overlay\">{{ competition.title }}</a></li>
+                <li><a href=\"{{ path('competitions_show', {id:competition.id}) }}\" class=\"text-overlay uk-text-right\">{{ competition.title }}</a></li>
             {% endfor %}
         </ul>
     </div>
@@ -131,7 +131,7 @@ class __TwigTemplate_06cbadb0b38c534278dd3f2fd72353bc91acc8269dc5aa139b1c24a9b5d
     <div class=\"uk-accordion-content\">
         <ul class=\"uk-list uk-list-divider\">
             {% for competition in ligues %}
-                <li><a href=\"{{ path('competitions_show', {id:competition.id}) }}\" class=\"text-overlay\">{{ competition.title }}</a></li>
+                <li><a href=\"{{ path('competitions_show', {id:competition.id}) }}\" class=\"text-overlay uk-text-right\">{{ competition.title }}</a></li>
             {% endfor %}
         </ul>
     </div>

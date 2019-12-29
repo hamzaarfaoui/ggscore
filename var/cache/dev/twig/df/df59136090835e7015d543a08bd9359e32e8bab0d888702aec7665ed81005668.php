@@ -59,21 +59,21 @@ class __TwigTemplate_adc8252e3f23a2ff6fd3e8dd2dc80e508c7c2fdb81c24149b0ad3579306
         // line 4
         echo "    <h1>Level edit</h1>
 
-    ";
+    <form action=\"";
         // line 6
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["edit_form"] ?? $this->getContext($context, "edit_form")), 'form_start');
-        echo "
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("edit_level_traitement", ["id" => $this->getAttribute(($context["level"] ?? $this->getContext($context, "level")), "id", [])]), "html", null, true);
+        echo "\" method=\"post\">
     <b>Titre :</b>
-        ";
+        <input type=\"text\" name=\"title\" value=\"";
         // line 8
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["edit_form"] ?? $this->getContext($context, "edit_form")), "title", []), 'widget', ["attr" => ["class" => "uk-input", "required" => "true"]]);
-        echo "
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["level"] ?? $this->getContext($context, "level")), "title", []), "html", null, true);
+        echo "\" class=\"uk-input\">
     <b>Contenu :</b>
-    ";
+    <textarea name=\"content\" class=\"ckeditor\">";
         // line 10
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["edit_form"] ?? $this->getContext($context, "edit_form")), "content", []), 'widget', ["attr" => ["class" => "ckeditor", "required" => "true"]]);
-        echo "<br><br>
-        <input type=\"submit\" value=\"Enregistrer\" class=\"uk-button uk-button-primary\" /> 
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["level"] ?? $this->getContext($context, "level")), "content", []), "html", null, true);
+        echo "</textarea>
+      <input type=\"submit\" value=\"Enregistrer\" class=\"uk-button uk-button-primary\" /> 
         <a href=\"";
         // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_competitions_show", ["id" => $this->getAttribute($this->getAttribute(($context["level"] ?? $this->getContext($context, "level")), "competition", []), "id", [])]), "html", null, true);
@@ -87,10 +87,7 @@ class __TwigTemplate_adc8252e3f23a2ff6fd3e8dd2dc80e508c7c2fdb81c24149b0ad3579306
         // line 15
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["delete_form"] ?? $this->getContext($context, "delete_form")), 'form_end');
         echo "
-    ";
-        // line 16
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["edit_form"] ?? $this->getContext($context, "edit_form")), 'form_end');
-        echo "
+    </form>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -112,7 +109,7 @@ class __TwigTemplate_adc8252e3f23a2ff6fd3e8dd2dc80e508c7c2fdb81c24149b0ad3579306
 
     public function getDebugInfo()
     {
-        return array (  92 => 16,  88 => 15,  83 => 13,  79 => 12,  74 => 10,  69 => 8,  64 => 6,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  88 => 15,  83 => 13,  79 => 12,  74 => 10,  69 => 8,  64 => 6,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -130,17 +127,17 @@ class __TwigTemplate_adc8252e3f23a2ff6fd3e8dd2dc80e508c7c2fdb81c24149b0ad3579306
 {% block body %}
     <h1>Level edit</h1>
 
-    {{ form_start(edit_form) }}
+    <form action=\"{{ path('edit_level_traitement', {id: level.id}) }}\" method=\"post\">
     <b>Titre :</b>
-        {{ form_widget(edit_form.title, {'attr': {'class': 'uk-input', 'required': 'true'},}) }}
+        <input type=\"text\" name=\"title\" value=\"{{level.title}}\" class=\"uk-input\">
     <b>Contenu :</b>
-    {{ form_widget(edit_form.content, {'attr': {'class': 'ckeditor', 'required': 'true'},}) }}<br><br>
-        <input type=\"submit\" value=\"Enregistrer\" class=\"uk-button uk-button-primary\" /> 
+    <textarea name=\"content\" class=\"ckeditor\">{{level.content}}</textarea>
+      <input type=\"submit\" value=\"Enregistrer\" class=\"uk-button uk-button-primary\" /> 
         <a href=\"{{ path('admin_competitions_show', {id:level.competition.id}) }}\"  class=\"uk-button uk-button-default\">Liste des phases</a>
         {{ form_start(delete_form) }}
             <input type=\"submit\" value=\"Supprimer\"  class=\"uk-button uk-button-danger\">
         {{ form_end(delete_form) }}
-    {{ form_end(edit_form) }}
+    </form>
 {% endblock %}
 ", ":levels:edit.html.twig", "/var/www/html/ggscore/app/Resources/views/levels/edit.html.twig");
     }

@@ -70,7 +70,7 @@ class __TwigTemplate_721f5d12da516f3c4a174af872da5ca735a00ad3fb06e54f785e2e3abec
             echo twig_escape_filter($this->env, $this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "title", []), "html", null, true);
             echo "</h4>
 
-                    <ul uk-accordion>
+                    <ul  class=\"uk-list uk-list-divider\">
                         ";
             // line 12
             $context['_parent'] = $context;
@@ -78,58 +78,56 @@ class __TwigTemplate_721f5d12da516f3c4a174af872da5ca735a00ad3fb06e54f785e2e3abec
             foreach ($context['_seq'] as $context["_key"] => $context["level"]) {
                 // line 13
                 echo "                            <li>
-                                <a class=\"uk-accordion-title\" href=\"#\">";
+                                <a href=\"";
                 // line 14
+                echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("level_front_show", ["id" => $this->getAttribute($context["level"], "id", [])]), "html", null, true);
+                echo "\">";
                 echo twig_escape_filter($this->env, $this->getAttribute($context["level"], "title", []), "html", null, true);
                 echo "</a>
-                                <div class=\"uk-accordion-content\">";
-                // line 15
-                echo twig_escape_filter($this->env, $this->getAttribute($context["level"], "content", []), "html", null, true);
-                echo "</div>
                             </li>
                         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['level'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 18
+            // line 17
             echo "                    </ul>
 
                 </div>
             </div>
         </div>
     ";
-        } elseif (($this->getAttribute(        // line 23
+        } elseif (($this->getAttribute(        // line 22
 ($context["competion"] ?? $this->getContext($context, "competion")), "status", []) == 2)) {
-            // line 24
+            // line 23
             echo "        <div class=\"uk-child-width-1-1@m\" uk-grid>
             <div class=\"uk-inline uk-margin\">
                 <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
                     <div class=\"uk-position-right uk-overlay uk-overlay-default\">
                         <h4>";
-            // line 28
+            // line 27
             echo twig_escape_filter($this->env, $this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "title", []), "html", null, true);
             echo "</h4>
                     </div>
                 </div>
-                    <div class=\"uk-child-width-1-2 uk-text-center\" uk-grid>
-                        <div>
-                            <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
-                                ";
-            // line 34
+                <div class=\"uk-child-width-1-2 uk-text-center\" uk-grid>
+                    <div>
+                        <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
+                            ";
+            // line 33
             echo $this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "contentClassement", []);
             echo "
-                            </div>
-                        </div>
-                        <div>
-                            <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
-                                ";
-            // line 39
-            echo $this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "content", []);
-            echo "
-                            </div>
                         </div>
                     </div>
+                    <div>
+                        <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
+                            ";
+            // line 38
+            echo $this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "content", []);
+            echo "
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     ";
@@ -154,7 +152,7 @@ class __TwigTemplate_721f5d12da516f3c4a174af872da5ca735a00ad3fb06e54f785e2e3abec
 
     public function getDebugInfo()
     {
-        return array (  128 => 39,  120 => 34,  111 => 28,  105 => 24,  103 => 23,  96 => 18,  87 => 15,  83 => 14,  80 => 13,  76 => 12,  70 => 9,  65 => 6,  63 => 5,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  126 => 38,  118 => 33,  109 => 27,  103 => 23,  101 => 22,  94 => 17,  83 => 14,  80 => 13,  76 => 12,  70 => 9,  65 => 6,  63 => 5,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -177,11 +175,10 @@ class __TwigTemplate_721f5d12da516f3c4a174af872da5ca735a00ad3fb06e54f785e2e3abec
                 <div class=\"uk-position-right uk-overlay uk-overlay-default\">
                     <h4>{{ competion.title }}</h4>
 
-                    <ul uk-accordion>
+                    <ul  class=\"uk-list uk-list-divider\">
                         {% for level in competion.levels %}
                             <li>
-                                <a class=\"uk-accordion-title\" href=\"#\">{{ level.title }}</a>
-                                <div class=\"uk-accordion-content\">{{ level.content }}</div>
+                                <a href=\"{{ path('level_front_show', {id:level.id}) }}\">{{ level.title }}</a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -197,18 +194,18 @@ class __TwigTemplate_721f5d12da516f3c4a174af872da5ca735a00ad3fb06e54f785e2e3abec
                         <h4>{{ competion.title }}</h4>
                     </div>
                 </div>
-                    <div class=\"uk-child-width-1-2 uk-text-center\" uk-grid>
-                        <div>
-                            <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
-                                {{ competion.contentClassement|raw }}
-                            </div>
-                        </div>
-                        <div>
-                            <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
-                                {{ competion.content|raw }}
-                            </div>
+                <div class=\"uk-child-width-1-2 uk-text-center\" uk-grid>
+                    <div>
+                        <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
+                            {{ competion.contentClassement|raw }}
                         </div>
                     </div>
+                    <div>
+                        <div class=\"uk-margin uk-card uk-card-default uk-card-body\">
+                            {{ competion.content|raw }}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     {% endif %}

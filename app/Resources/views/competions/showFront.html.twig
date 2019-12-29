@@ -8,11 +8,10 @@
                 <div class="uk-position-right uk-overlay uk-overlay-default">
                     <h4>{{ competion.title }}</h4>
 
-                    <ul uk-accordion>
+                    <ul  class="uk-list uk-list-divider">
                         {% for level in competion.levels %}
                             <li>
-                                <a class="uk-accordion-title" href="#">{{ level.title }}</a>
-                                <div class="uk-accordion-content">{{ level.content }}</div>
+                                <a href="{{ path('level_front_show', {id:level.id}) }}">{{ level.title }}</a>
                             </li>
                         {% endfor %}
                     </ul>

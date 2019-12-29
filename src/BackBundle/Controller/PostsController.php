@@ -142,6 +142,22 @@ class PostsController extends Controller
 
         return $this->redirectToRoute('admin_posts_index');
     }
+    
+    /**
+     * Deletes a post entity.
+     *
+     * @Route("/delete-image/{id}", name="admin_posts_delete_image")
+     * @Method("POST")
+     */
+    public function deleteImageAction(Request $request, Posts $post)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $post->setImage(null);
+        $em->persist($post);
+        $em->flush();
+
+        return $this->redirectToRoute('admin_posts_index');
+    }
 
     /**
      * Creates a form to delete a post entity.

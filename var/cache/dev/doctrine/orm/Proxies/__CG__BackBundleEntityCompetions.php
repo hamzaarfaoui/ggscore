@@ -64,10 +64,10 @@ class Competions extends \BackBundle\Entity\Competions implements \Doctrine\ORM\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'id', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'levels', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'title', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'content'];
+            return ['__isInitialized__', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'id', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'levels', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'title', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'content', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'contentClassement', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'status'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'id', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'levels', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'title', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'content'];
+        return ['__isInitialized__', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'id', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'levels', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'title', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'content', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'contentClassement', '' . "\0" . 'BackBundle\\Entity\\Competions' . "\0" . 'status'];
     }
 
     /**
@@ -224,12 +224,56 @@ class Competions extends \BackBundle\Entity\Competions implements \Doctrine\ORM\
     /**
      * {@inheritDoc}
      */
+    public function getContentClassement()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getContentClassement', []);
+
+        return parent::getContentClassement();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setContentClassement($contentClassement)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setContentClassement', [$contentClassement]);
+
+        return parent::setContentClassement($contentClassement);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getContent()
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getContent', []);
 
         return parent::getContent();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getStatus()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStatus', []);
+
+        return parent::getStatus();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setStatus($status)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setStatus', [$status]);
+
+        return parent::setStatus($status);
     }
 
     /**

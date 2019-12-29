@@ -81,6 +81,19 @@ class DefaultController extends Controller
     }
     
     /**
+     * Finds and displays a competion entity.
+     *
+     * @Route("/level-details/{id}", name="level_front_show")
+     * @Method("GET")
+     */
+    public function showlevelFrontAction(Levels $level)
+    {
+        return $this->render('levels/showFront.html.twig', array(
+            'level' => $level,
+        ));
+    }
+    
+    /**
      * Finds and displays a level entity.
      *
      * @Route("/competition-levels/{id}", name="levels_show")

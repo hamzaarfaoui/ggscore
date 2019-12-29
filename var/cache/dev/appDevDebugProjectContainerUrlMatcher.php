@@ -129,6 +129,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_levels_edit']), array (  '_controller' => 'BackBundle\\Controller\\LevelsController::editAction',));
                 }
 
+                // edit_level_traitement
+                if (preg_match('#^/admin/levels/(?P<id>[^/]++)/edit_level_traitement$#sD', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'edit_level_traitement']), array (  '_controller' => 'BackBundle\\Controller\\LevelsController::editTraitementAction',));
+                }
+
                 // admin_levels_delete
                 if (preg_match('#^/admin/levels/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_levels_delete']), array (  '_controller' => 'BackBundle\\Controller\\LevelsController::deleteAction',));
@@ -205,9 +210,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_posts_edit']), array (  '_controller' => 'BackBundle\\Controller\\PostsController::editAction',));
                 }
 
-                // admin_posts_delete
-                if (0 === strpos($pathinfo, '/admin/posts/delete') && preg_match('#^/admin/posts/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_posts_delete']), array (  '_controller' => 'BackBundle\\Controller\\PostsController::deleteAction',));
+                if (0 === strpos($pathinfo, '/admin/posts/delete')) {
+                    // admin_posts_delete
+                    if (preg_match('#^/admin/posts/delete/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_posts_delete']), array (  '_controller' => 'BackBundle\\Controller\\PostsController::deleteAction',));
+                    }
+
+                    // admin_posts_delete_image
+                    if (0 === strpos($pathinfo, '/admin/posts/delete-image') && preg_match('#^/admin/posts/delete\\-image/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'admin_posts_delete_image']), array (  '_controller' => 'BackBundle\\Controller\\PostsController::deleteImageAction',));
+                    }
+
                 }
 
             }
@@ -276,6 +289,53 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, ['_route' => 'levels_show']), array (  '_controller' => 'FrontBundle\\Controller\\DefaultController::showLevelAction',));
         }
 
+        if (0 === strpos($pathinfo, '/l')) {
+            // level_front_show
+            if (0 === strpos($pathinfo, '/level-details') && preg_match('#^/level\\-details/(?P<id>[^/]++)$#sD', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, ['_route' => 'level_front_show']), array (  '_controller' => 'FrontBundle\\Controller\\DefaultController::showlevelFrontAction',));
+            }
+
+            if (0 === strpos($pathinfo, '/login')) {
+                // fos_user_security_login
+                if ('/login' === $pathinfo) {
+                    $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_fos_user_security_login;
+                    }
+
+                    return $ret;
+                }
+                not_fos_user_security_login:
+
+                // fos_user_security_check
+                if ('/login_check' === $pathinfo) {
+                    $ret = array (  '_controller' => 'fos_user.security.controller:checkAction',  '_route' => 'fos_user_security_check',);
+                    if (!in_array($requestMethod, ['POST'])) {
+                        $allow = array_merge($allow, ['POST']);
+                        goto not_fos_user_security_check;
+                    }
+
+                    return $ret;
+                }
+                not_fos_user_security_check:
+
+            }
+
+            // fos_user_security_logout
+            if ('/logout' === $pathinfo) {
+                $ret = array (  '_controller' => 'fos_user.security.controller:logoutAction',  '_route' => 'fos_user_security_logout',);
+                if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                    $allow = array_merge($allow, ['GET', 'POST']);
+                    goto not_fos_user_security_logout;
+                }
+
+                return $ret;
+            }
+            not_fos_user_security_logout:
+
+        }
+
         // user_homepage
         if ('/user' === $trimmedPathinfo) {
             $ret = array (  '_controller' => 'UserBundle\\Controller\\DefaultController::indexAction',  '_route' => 'user_homepage',);
@@ -315,45 +375,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         if ('/efefeaffef' === $pathinfo) {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
-
-        if (0 === strpos($pathinfo, '/login')) {
-            // fos_user_security_login
-            if ('/login' === $pathinfo) {
-                $ret = array (  '_controller' => 'fos_user.security.controller:loginAction',  '_route' => 'fos_user_security_login',);
-                if (!in_array($canonicalMethod, ['GET', 'POST'])) {
-                    $allow = array_merge($allow, ['GET', 'POST']);
-                    goto not_fos_user_security_login;
-                }
-
-                return $ret;
-            }
-            not_fos_user_security_login:
-
-            // fos_user_security_check
-            if ('/login_check' === $pathinfo) {
-                $ret = array (  '_controller' => 'fos_user.security.controller:checkAction',  '_route' => 'fos_user_security_check',);
-                if (!in_array($requestMethod, ['POST'])) {
-                    $allow = array_merge($allow, ['POST']);
-                    goto not_fos_user_security_check;
-                }
-
-                return $ret;
-            }
-            not_fos_user_security_check:
-
-        }
-
-        // fos_user_security_logout
-        if ('/logout' === $pathinfo) {
-            $ret = array (  '_controller' => 'fos_user.security.controller:logoutAction',  '_route' => 'fos_user_security_logout',);
-            if (!in_array($canonicalMethod, ['GET', 'POST'])) {
-                $allow = array_merge($allow, ['GET', 'POST']);
-                goto not_fos_user_security_logout;
-            }
-
-            return $ret;
-        }
-        not_fos_user_security_logout:
 
         if (0 === strpos($pathinfo, '/register')) {
             // fos_user_registration_register

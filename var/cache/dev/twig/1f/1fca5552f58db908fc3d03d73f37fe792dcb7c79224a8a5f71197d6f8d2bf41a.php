@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* :levels:index.html.twig */
+/* levels/index.html.twig */
 class __TwigTemplate_46035176e35110d2bd5e3794db11709774812adf5c254f452b875764cb6173db extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -32,12 +32,12 @@ class __TwigTemplate_46035176e35110d2bd5e3794db11709774812adf5c254f452b875764cb6
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":levels:index.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "levels/index.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":levels:index.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "levels/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", ":levels:index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "levels/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -74,43 +74,38 @@ class __TwigTemplate_46035176e35110d2bd5e3794db11709774812adf5c254f452b875764cb6
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Content</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 20
+        // line 19
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["levels"] ?? $this->getContext($context, "levels")));
         foreach ($context['_seq'] as $context["_key"] => $context["level"]) {
-            // line 21
+            // line 20
             echo "            <tr>
                 <td><a href=\"";
-            // line 22
+            // line 21
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_levels_show", ["id" => $this->getAttribute($context["level"], "id", [])]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["level"], "id", []), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 23
+            // line 22
             echo twig_escape_filter($this->env, $this->getAttribute($context["level"], "title", []), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 24
-            echo twig_escape_filter($this->env, $this->getAttribute($context["level"], "content", []), "html", null, true);
             echo "</td>
                 <td>
                     <ul>
                         <li>
                             <a href=\"";
-            // line 28
+            // line 26
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_levels_show", ["id" => $this->getAttribute($context["level"], "id", [])]), "html", null, true);
             echo "\">show</a>
                         </li>
                         <li>
                             <a href=\"";
-            // line 31
+            // line 29
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_levels_edit", ["id" => $this->getAttribute($context["level"], "id", [])]), "html", null, true);
             echo "\">edit</a>
                         </li>
@@ -122,14 +117,14 @@ class __TwigTemplate_46035176e35110d2bd5e3794db11709774812adf5c254f452b875764cb6
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['level'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 35
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 42
+        // line 40
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("admin_levels_new", ["id" => $this->getAttribute(($context["competion"] ?? $this->getContext($context, "competion")), "id", [])]), "html", null, true);
         echo "\">Create a new level</a>
         </li>
@@ -146,7 +141,7 @@ class __TwigTemplate_46035176e35110d2bd5e3794db11709774812adf5c254f452b875764cb6
 
     public function getTemplateName()
     {
-        return ":levels:index.html.twig";
+        return "levels/index.html.twig";
     }
 
     public function isTraitable()
@@ -156,7 +151,7 @@ class __TwigTemplate_46035176e35110d2bd5e3794db11709774812adf5c254f452b875764cb6
 
     public function getDebugInfo()
     {
-        return array (  133 => 42,  126 => 37,  114 => 31,  108 => 28,  101 => 24,  97 => 23,  91 => 22,  88 => 21,  84 => 20,  68 => 7,  64 => 6,  60 => 4,  51 => 3,  29 => 1,);
+        return array (  128 => 40,  121 => 35,  109 => 29,  103 => 26,  96 => 22,  90 => 21,  87 => 20,  83 => 19,  68 => 7,  64 => 6,  60 => 4,  51 => 3,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -183,7 +178,6 @@ class __TwigTemplate_46035176e35110d2bd5e3794db11709774812adf5c254f452b875764cb6
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Content</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -192,7 +186,6 @@ class __TwigTemplate_46035176e35110d2bd5e3794db11709774812adf5c254f452b875764cb6
             <tr>
                 <td><a href=\"{{ path('admin_levels_show', { 'id': level.id }) }}\">{{ level.id }}</a></td>
                 <td>{{ level.title }}</td>
-                <td>{{ level.content }}</td>
                 <td>
                     <ul>
                         <li>
@@ -215,6 +208,6 @@ class __TwigTemplate_46035176e35110d2bd5e3794db11709774812adf5c254f452b875764cb6
     </ul>
     </div>
 {% endblock %}
-", ":levels:index.html.twig", "/var/www/html/ggscore/app/Resources/views/levels/index.html.twig");
+", "levels/index.html.twig", "/var/www/html/ggscore/app/Resources/views/levels/index.html.twig");
     }
 }

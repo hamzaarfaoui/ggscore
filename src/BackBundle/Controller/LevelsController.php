@@ -86,20 +86,26 @@ class LevelsController extends Controller
     public function editAction(Request $request, Levels $level)
     {
         $deleteForm = $this->createDeleteForm($level);
-        $editForm = $this->createForm('BackBundle\Form\LevelsType', $level);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('admin_levels_edit', array('id' => $level->getId()));
-        }
-
         return $this->render('levels/edit.html.twig', array(
             'level' => $level,
-            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
+    }
+    /**
+     * Displays a form to edit an existing level entity.
+     *
+     * @Route("/{id}/edit_level_traitement", name="edit_level_traitement")
+     * @Method({"GET", "POST"})
+     */
+    public function editTraitementAction(Request $request, Levels $level)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $level->setContent($request->get('content'));
+        $level->setTitle($request->get('title'));
+        $em->persist($level);
+        $em->flush();
+        return $this->redirectToRoute('admin_levels_show', array('id' => $level->getId()));
+        
     }
 
     /**

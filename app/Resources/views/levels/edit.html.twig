@@ -3,15 +3,15 @@
 {% block body %}
     <h1>Level edit</h1>
 
-    {{ form_start(edit_form) }}
+    <form action="{{ path('edit_level_traitement', {id: level.id}) }}" method="post">
     <b>Titre :</b>
-        {{ form_widget(edit_form.title, {'attr': {'class': 'uk-input', 'required': 'true'},}) }}
+        <input type="text" name="title" value="{{level.title}}" class="uk-input">
     <b>Contenu :</b>
-    {{ form_widget(edit_form.content, {'attr': {'class': 'ckeditor', 'required': 'true'},}) }}<br><br>
-        <input type="submit" value="Enregistrer" class="uk-button uk-button-primary" /> 
+    <textarea name="content" class="ckeditor">{{level.content}}</textarea>
+      <input type="submit" value="Enregistrer" class="uk-button uk-button-primary" /> 
         <a href="{{ path('admin_competitions_show', {id:level.competition.id}) }}"  class="uk-button uk-button-default">Liste des phases</a>
         {{ form_start(delete_form) }}
             <input type="submit" value="Supprimer"  class="uk-button uk-button-danger">
         {{ form_end(delete_form) }}
-    {{ form_end(edit_form) }}
+    </form>
 {% endblock %}

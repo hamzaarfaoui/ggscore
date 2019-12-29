@@ -58,6 +58,9 @@
             initialPreview: [
                 "{{ asset('uploads/articles/') }}{{ post.image }}"
             ],
+            initialPreviewConfig: [
+                {caption: "{{ asset('uploads/articles/') }}{{ post.image }}", width: "120px", url: "{{path('admin_posts_delete_image', {id:post.id})}}", key: 1}
+            ],
             {% endif %}
         });
     </script>

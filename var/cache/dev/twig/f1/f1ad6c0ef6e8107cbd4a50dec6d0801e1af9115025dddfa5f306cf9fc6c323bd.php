@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* includes/front/navbar.html.twig */
+/* :includes/front:navbar.html.twig */
 class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d779810ec6 extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -27,15 +27,15 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "includes/front/navbar.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":includes/front:navbar.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "includes/front/navbar.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", ":includes/front:navbar.html.twig"));
 
         // line 1
         echo "     
 <nav class=\"uk-navbar uk-navbar-container uk-box-shadow-medium uk-hidden@m\" id=\"menu\" uk-navbar style=\"position: relative; z-index: 980;background-color: #212121;height: 50px;\">
-    <div class=\"uk-navbar-left\">
+    <div class=\"uk-navbar-right\">
         <a class=\"uk-navbar-toggle\" href=\"#\" uk-toggle=\"target: #menu-mobile\">
             <span uk-navbar-toggle-icon></span>
         </a>
@@ -90,7 +90,7 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
 
     public function getTemplateName()
     {
-        return "includes/front/navbar.html.twig";
+        return ":includes/front:navbar.html.twig";
     }
 
     public function isTraitable()
@@ -115,7 +115,7 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
     {
         return new Source("     
 <nav class=\"uk-navbar uk-navbar-container uk-box-shadow-medium uk-hidden@m\" id=\"menu\" uk-navbar style=\"position: relative; z-index: 980;background-color: #212121;height: 50px;\">
-    <div class=\"uk-navbar-left\">
+    <div class=\"uk-navbar-right\">
         <a class=\"uk-navbar-toggle\" href=\"#\" uk-toggle=\"target: #menu-mobile\">
             <span uk-navbar-toggle-icon></span>
         </a>
@@ -145,6 +145,6 @@ class __TwigTemplate_016bc99399c53976c7d59fcff3ddf01ac9e67a1637126442f2f121d7798
                     )) }}
         </ul>
     </div>
-</nav>", "includes/front/navbar.html.twig", "/var/www/html/ggscore/app/Resources/views/includes/front/navbar.html.twig");
+</nav>", ":includes/front:navbar.html.twig", "/var/www/html/ggscore/app/Resources/views/includes/front/navbar.html.twig");
     }
 }

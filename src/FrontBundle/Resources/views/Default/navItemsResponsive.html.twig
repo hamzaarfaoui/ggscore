@@ -3,7 +3,7 @@
     <div class="uk-accordion-content">
         <ul class="uk-list uk-list-divider">
             {% for competition in competitions %}
-                <li><a href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay">{{ competition.title }}</a></li>
+                <li><a href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay uk-text-right">{{ competition.title }}</a></li>
             {% endfor %}
         </ul>
     </div>
@@ -13,7 +13,7 @@
     <div class="uk-accordion-content">
         <ul class="uk-list uk-list-divider">
             {% for competition in ligues %}
-                <li><a href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay">{{ competition.title }}</a></li>
+                <li><a href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay uk-text-right">{{ competition.title }}</a></li>
             {% endfor %}
         </ul>
     </div>

@@ -1,24 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Level</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ level.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ level.title }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ level.content|raw }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="uk-child-width-1-1@m" uk-grid>
+    <h1>{{ level.title }}</h1>
+    <hr>
+    {{ level.content|raw }}
+    </div>
 
     <ul>
         <li>

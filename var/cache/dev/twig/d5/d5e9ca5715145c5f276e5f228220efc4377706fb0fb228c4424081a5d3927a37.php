@@ -11,7 +11,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* base.html.twig */
+/* ::base.html.twig */
 class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724979e4 extends \Twig\Template
 {
     public function __construct(Environment $env)
@@ -31,10 +31,10 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
     protected function doDisplay(array $context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "::base.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "::base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -47,7 +47,7 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
         echo "</title>
         ";
         // line 6
-        $this->loadTemplate("includes/front/css.html.twig", "base.html.twig", 6)->display($context);
+        $this->loadTemplate("includes/front/css.html.twig", "::base.html.twig", 6)->display($context);
         // line 7
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
@@ -62,7 +62,7 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
     <body>
         ";
         // line 14
-        $this->loadTemplate("includes/front/navbar.html.twig", "base.html.twig", 14)->display($context);
+        $this->loadTemplate("includes/front/navbar.html.twig", "::base.html.twig", 14)->display($context);
         // line 15
         echo "        <div class=\"uk-container\" style=\"margin-top: 20px;margin-bottom: 20px;\">
             ";
@@ -72,10 +72,10 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
         echo "        </div>
         ";
         // line 18
-        $this->loadTemplate("includes/front/footer.html.twig", "base.html.twig", 18)->display($context);
+        $this->loadTemplate("includes/front/footer.html.twig", "::base.html.twig", 18)->display($context);
         // line 19
         echo "        ";
-        $this->loadTemplate("includes/front/js.html.twig", "base.html.twig", 19)->display($context);
+        $this->loadTemplate("includes/front/js.html.twig", "::base.html.twig", 19)->display($context);
         // line 20
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
@@ -161,7 +161,7 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
 
     public function getTemplateName()
     {
-        return "base.html.twig";
+        return "::base.html.twig";
     }
 
     public function isTraitable()
@@ -206,6 +206,6 @@ class __TwigTemplate_417a247a8f627faec36da06fa94ac40ea15a367416f607f6001c3ebd724
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/var/www/html/ggscore/app/Resources/views/base.html.twig");
+", "::base.html.twig", "/var/www/html/ggscore/app/Resources/views/base.html.twig");
     }
 }
