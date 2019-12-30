@@ -1,21 +1,60 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <style>
+        .level-linkk{
+            width: 50%;
+        }
+        .level-linkk:hover{
+            text-decoration: none;
+        }
+        .level-link:hover{
+            
+            border: 1px solid #0f6ecd;
+            color: #0f6ecd;
+            background-color: #FFF;
+        }
+        .level-link{
+            border: 1px solid #0f6ecd;
+            background-color: #0f6ecd;
+            padding: 10px;
+            color: #FFF;
+            font-size: 16px;
+            width: 50%;
+            margin-left: 24%;
+        }
+        .competition-desc{
+            width: 80%;text-align: center;margin-left: 10%;
+        }
+        .table-group{
+            width: 50%;
+        }
+        @media screen and (max-width: 400px){
+            .competition-desc{
+                width: 100%;
+                margin-left: 0;
+            }
+            .level-link{
+                width: 93%;
+                margin-left: 0;
+            }
+            .table-group{
+                width: 100%;
+            }
+        }
+    </style>
+{% endblock %}
 {% block body %}
 
     {% if(competion.status == 1) %}
         <div class="uk-child-width-1-1@m" uk-grid>
             <div class="uk-inline uk-margin">
-                <div class="uk-position-right uk-overlay uk-overlay-default">
-                    <h4>{{ competion.title }}</h4>
-
-                    <ul  class="uk-list uk-list-divider">
-                        {% for level in competion.levels %}
-                            <li>
-                                <a href="{{ path('level_front_show', {id:level.id}) }}">{{ level.title }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-
+                <div class="competition-desc">
+                    <h3>{{ competion.title }}</h3>
+                    <hr>
+                    {% for level in competion.levels %}
+                        <a class="level-linkk" href="{{ path('level_front_show', {id:level.id}) }}"><h4 class="level-link">{{ level.title }}</h4></a>
+                        {% if(not loop.last) %}<hr class="uk-divider-icon">{% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>

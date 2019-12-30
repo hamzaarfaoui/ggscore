@@ -100,7 +100,7 @@ class __TwigTemplate_5dac746632b41bd793669436e9b8eeb72f7b02bc4650084ec3c80f2539f
         }
         .uk-slider-items .uk-panel img{
             width: 100%;
-            height: 400px;
+            height: 400px;  
         }
         @media screen and (max-width: 400px){
             .text-overlay{
@@ -289,7 +289,7 @@ class __TwigTemplate_5dac746632b41bd793669436e9b8eeb72f7b02bc4650084ec3c80f2539f
         }
         .uk-slider-items .uk-panel img{
             width: 100%;
-            height: 400px;
+            height: 400px;  
         }
         @media screen and (max-width: 400px){
             .text-overlay{
