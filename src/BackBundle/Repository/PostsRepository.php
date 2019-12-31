@@ -15,4 +15,9 @@ class PostsRepository extends \Doctrine\ORM\EntityRepository
         $qb->select('u')->orderBy('u.createdAt', 'DESC')->setMaxResults(6);
         return $qb->getQuery()->getResult();
     }
+    public function inSlider() {
+        $qb = $this->createQueryBuilder('u');
+        $qb->select('u')->where('u.inSlider = 1')->orderBy('u.OrderInSlider', 'ASC');
+        return $qb->getQuery()->getResult();
+    }
 }

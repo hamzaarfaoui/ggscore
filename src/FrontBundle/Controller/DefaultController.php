@@ -24,8 +24,9 @@ class DefaultController extends Controller
         
         
         $em = $this->getDoctrine()->getManager();
+        $postsInSlider = $em->getRepository('BackBundle:Posts')->inSlider();
         $posts = $em->getRepository('BackBundle:Posts')->inIndex();
-        return $this->render('@Front/Default/index.html.twig', array('posts' => $posts));
+        return $this->render('@Front/Default/index.html.twig', array('posts' => $posts,'postsInSlider' => $postsInSlider));
     }
     
     /**

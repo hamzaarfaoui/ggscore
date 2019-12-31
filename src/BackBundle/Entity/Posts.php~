@@ -61,6 +61,20 @@ class Posts
      * @ORM\Column(name="isLeft", type="integer", nullable=true)
      */
     private $isLeft;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="inSlider", type="integer", nullable=true)
+     */
+    private $inSlider;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="OrderInSlider", type="integer", nullable=true)
+     */
+    private $OrderInSlider;
 
     /**
      * @var \DateTime
@@ -253,5 +267,29 @@ class Posts
     public function getIsVertical()
     {
         return $this->isVertical;
+    }
+
+    /**
+     * Set isLeft
+     *
+     * @param integer $isLeft
+     *
+     * @return Posts
+     */
+    public function setIsLeft($isLeft)
+    {
+        $this->isLeft = $isLeft;
+
+        return $this;
+    }
+
+    /**
+     * Get isLeft
+     *
+     * @return integer
+     */
+    public function getIsLeft()
+    {
+        return $this->isLeft;
     }
 }

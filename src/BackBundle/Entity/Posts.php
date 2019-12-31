@@ -61,6 +61,20 @@ class Posts
      * @ORM\Column(name="isLeft", type="integer", nullable=true)
      */
     private $isLeft;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="inSlider", type="integer", nullable=true)
+     */
+    private $inSlider;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="OrderInSlider", type="integer", nullable=true)
+     */
+    private $OrderInSlider;
 
     /**
      * @var \DateTime
@@ -277,5 +291,53 @@ class Posts
     public function getIsLeft()
     {
         return $this->isLeft;
+    }
+
+    /**
+     * Set inSlider
+     *
+     * @param integer $inSlider
+     *
+     * @return Posts
+     */
+    public function setInSlider($inSlider)
+    {
+        $this->inSlider = $inSlider;
+
+        return $this;
+    }
+
+    /**
+     * Get inSlider
+     *
+     * @return integer
+     */
+    public function getInSlider()
+    {
+        return $this->inSlider;
+    }
+
+    /**
+     * Set orderInSlider
+     *
+     * @param integer $orderInSlider
+     *
+     * @return Posts
+     */
+    public function setOrderInSlider($orderInSlider)
+    {
+        $this->OrderInSlider = $orderInSlider;
+
+        return $this;
+    }
+
+    /**
+     * Get orderInSlider
+     *
+     * @return integer
+     */
+    public function getOrderInSlider()
+    {
+        return $this->OrderInSlider;
     }
 }

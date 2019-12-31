@@ -6,6 +6,7 @@ use BackBundle\Entity\Posts;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 
 
@@ -25,12 +26,48 @@ class PostsController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
+        
         $posts = $em->getRepository('BackBundle:Posts')->findAll();
 
         return $this->render('posts/index.html.twig', array(
             'posts' => $posts,
         ));
+    }
+    
+    /**
+     * Slider.
+     *
+     * @Route("/slider", name="admin_slider")
+     * @Method("GET")
+     */
+    public function sliderAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $posts = $em->getRepository('BackBundle:Posts')->inSlider();
+
+        return $this->render('posts/slider.html.twig', array(
+            'posts' => $posts,
+        ));
+    }
+    
+    /**
+     *  Set article position in slider.
+     *
+     * @Route("/admin_set_article_position_in_slider/{id}", name="admin_set_article_position_in_slider")
+     * @Method("GET")
+     */
+    public function setArticlePositionInSliderAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $post = $em->getRepository('BackBundle:Posts')->find($id);
+        $position = $request->get('position');
+        $post->setOrderInSlider($position);
+        $em->persist($post);
+        $em->flush();
+
+        return new JsonResponse(array('status' => 'OK'));
     }
 
     /**
@@ -60,6 +97,7 @@ class PostsController extends Controller
             $post->setCreatedAt(new \DateTime('now'));
             $post->setUpdatedAt(new \DateTime('now'));
             $post->setIsVertical($request->get('representation'));
+            $post->setInSlider($request->get('inSlider'));
             $em->persist($post);
             $em->flush();
             $request->getSession()->getFlashBag()->add('success', "Article ajouté");
@@ -115,6 +153,7 @@ class PostsController extends Controller
              }
              
             $post->setIsVertical($request->get('representation'));
+            $post->setInSlider($request->get('inSlider'));
             $post->setUpdatedAt(new \DateTime('now'));
             $em->persist($post);
             $em->flush();

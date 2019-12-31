@@ -63,7 +63,7 @@
         <div style="margin-bottom: 50px;" class="slider-post uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">
 
             <ul class="uk-slider-items uk-grid">
-                {% for post in posts %}
+                {% for post in postsInSlider %}
                 <li class="uk-width-3-4">
                     <div class="uk-panel">
                         <img src="{{ asset('uploads/articles/') }}{{ post.image }}" alt="">
