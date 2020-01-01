@@ -1,8 +1,33 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <style>
+        .uk-container{
+            position: relative;
+            width: 72%;
+            padding: 10%;
+            left: 0;
+            top: 150px;
+            background-color: white;
+        }
+        .content-page{
+            position: absolute;
+            background-image: url('/uploads/competitions/fond/{{level.competition.fond}}');
+            width: 100%;
+        }
+        @media screen and (max-width: 400px){
+            .level-title{
+                font-size: 20px;
+                text-align: center;
+            }
+            .uk-container{
+                top: 50px;
+            }
+        }
+    </style>
+{% endblock %}
 {% block body %}
     <div class="uk-child-width-1-1@m" uk-grid style="text-align: right;direction: rtl;">
-    <h1>{{ level.title }}</h1>
+    <h1 class="level-title">{{ level.title }}</h1>
     <hr>
     {{ level.content | raw }}
     </div>

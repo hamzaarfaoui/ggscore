@@ -11,6 +11,8 @@ imports:
 parameters:
     locale: en
     images_articles: '%kernel.root_dir%/../web/uploads/articles'
+    logos_competitions: '%kernel.root_dir%/../web/uploads/competitions/logos'
+    fond_competitions: '%kernel.root_dir%/../web/uploads/competitions/fond'
 
 framework:
     templating:

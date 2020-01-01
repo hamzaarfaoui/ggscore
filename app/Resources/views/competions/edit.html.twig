@@ -1,13 +1,28 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/front/bootstrap.min.css')}}">
+{% endblock %}
 {% block body %}
     <h1>Competion edit</h1>
-
-    {{ form_start(edit_form) }}
+    <div class="row">
+        <div class="col-md-12">
+    {{ form_start(edit_form, { 'attr': {'enctype': 'multipart/form-data'} }) }}
         {{ form_widget(edit_form) }}
         <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
             <label><input class="uk-radio" type="radio" name="status" {{ competion.status !=2?'checked':'' }} value="1"> Conféderation</label>
             <label><input class="uk-radio" type="radio" name="status" {{ competion.status ==2?'checked':'' }} value="2"> Ligue</label>
+        </div>
+        <div class="uk-margin">
+            <p>Logo</p>
+            <div class="file-loading">
+                <input id="kv-explorer" class="file" type="file" name="logo">
+            </div>
+        </div>
+        <div class="uk-margin">
+            <p>Fond d'écran</p>
+            <div class="file-loading">
+                <input id="file-3" class="file" type="file" name="fond">
+            </div>
         </div>
         <div class="uk-child-width-1-2 uk-text-center" uk-grid>
             <div>
@@ -19,10 +34,14 @@
                 <textarea name="contentClassement" class="ckeditor"></textarea>
             </div>
         </div>
-        <input type="submit" value="Edit" />
+        <div class="uk-margin" style="margin-bottom: 60px;">
+        <input class="btn btn-primary" type="submit" value="Enregistrer" />
+        </div>
     {{ form_end(edit_form) }}
+    </div>
+        </div>
 
-    <ul>
+    {#<ul>
         <li>
             <a href="{{ path('admin_competitions_index') }}">Back to the list</a>
         </li>
@@ -31,9 +50,10 @@
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
-    </ul>
+    </ul>#}
 {% endblock %}
 {% block javascripts %}
+    <script src="{{ asset('assets/front/bootstrap.min.js')}}"></script>
     <script>
         $('#ligue').change(function() {
             if($('#ligue').is(':checked')) { $('#content').show(); }
@@ -41,5 +61,42 @@
          $('#confedration').change(function() {
             if($('#confedration').is(':checked')) { $('#content').hide(); }
          });
+         $("#kv-explorer").fileinput({
+            'theme': 'explorer-fa',
+            'uploadUrl': '#',
+            language: 'fr',
+            showUpload: false,
+            showCaption: false,
+            allowedFileExtensions: ['jpg', 'png', 'gif', 'pdf', 'txt', 'csv', 'ods', 'xls', 'docx', 'jpeg'],
+            overwriteInitial: false,
+            initialPreviewAsData: true,
+            {% if(competion.logo) %}
+            initialPreview: [
+                "{{ asset('uploads/competitions/logos/') }}{{ competion.logo }}"
+            ],
+            initialPreviewConfig: [
+                {caption: "{{ asset('uploads/competitions/logos/') }}{{ competion.logo }}", width: "120px", url: "{{path('admin_competition_logo', {id:competion.id})}}", key: 1}
+            ],
+            {% endif %}
+        });
+        $("#file-3").fileinput({
+        theme: 'fa',
+        language: 'fr',
+        showUpload: false,
+        showCaption: false,
+        browseClass: "btn btn-primary btn-lg",
+        fileType: "any",
+        previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+        overwriteInitial: false,
+        initialPreviewAsData: true,
+        {% if(competion.fond) %}
+            initialPreview: [
+                "{{ asset('uploads/competitions/fond/') }}{{ competion.fond }}"
+            ],
+            initialPreviewConfig: [
+                {caption: "{{ asset('uploads/competitions/fond/') }}{{ competion.fond }}", width: "120px", url: "{{path('admin_competition_fond', {id:competion.id})}}", key: 1}
+            ],
+        {% endif %}
+    });
     </script>
 {% endblock %}

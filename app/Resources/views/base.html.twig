@@ -12,8 +12,10 @@
     </head>
     <body>
         {% include 'includes/front/navbar.html.twig' %}
-        <div class="uk-container" style="margin-top: 20px;margin-bottom: 20px;">
-            {% block body %}{% endblock %}
+        <div class="content-page">
+            <div class="uk-container">
+                {% block body %}{% endblock %}
+            </div>
         </div>
         {% include 'includes/front/footer.html.twig' %}
         {% include 'includes/front/js.html.twig' %}

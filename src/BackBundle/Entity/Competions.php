@@ -47,6 +47,20 @@ class Competions
     /**
      * @var string
      *
+     * @ORM\Column(name="logo", type="string", length=255, nullable=true)
+     */
+    private $logo;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="font", type="string", length=255, nullable=true)
+     */
+    private $fond;
+    
+    /**
+     * @var string
+     *
      * @ORM\Column(name="contentClassement", type="text", nullable=true)
      */
     private $contentClassement;
@@ -210,5 +224,53 @@ class Competions
     
     public function __toString() {
         return $this->getTitle();
+    }
+
+    /**
+     * Set logo
+     *
+     * @param string $logo
+     *
+     * @return Competions
+     */
+    public function setLogo($logo)
+    {
+        $this->logo = $logo;
+
+        return $this;
+    }
+
+    /**
+     * Get logo
+     *
+     * @return string
+     */
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+
+    /**
+     * Set fond
+     *
+     * @param string $fond
+     *
+     * @return Competions
+     */
+    public function setFond($fond)
+    {
+        $this->fond = $fond;
+
+        return $this;
+    }
+
+    /**
+     * Get fond
+     *
+     * @return string
+     */
+    public function getFond()
+    {
+        return $this->fond;
     }
 }

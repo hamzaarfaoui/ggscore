@@ -5,6 +5,7 @@ namespace BackBundle\Controller;
 use BackBundle\Entity\Competions;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -94,7 +95,26 @@ class CompetionsController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            
+            $competion->setLogo($competion->getLogo());
+            $competion->setFond($competion->getFond());
+             if (isset($_FILES["logo"]["name"]) && !empty($_FILES["logo"]["name"])) {
+                  $file = $_FILES["logo"]["name"];
+                $File_Ext = substr($file, strrpos($file, '.'));
+                $fileName = md5(uniqid()) . $File_Ext;
+                move_uploaded_file(
+                    $_FILES["logo"]["tmp_name"], $this->getParameter('logos_competitions') . "/" . $fileName
+                );
+                $competion->setLogo($fileName);
+             }
+             if (isset($_FILES["fond"]["name"]) && !empty($_FILES["fond"]["name"])) {
+                  $file = $_FILES["fond"]["name"];
+                $File_Ext = substr($file, strrpos($file, '.'));
+                $fileName = md5(uniqid()) . $File_Ext;
+                move_uploaded_file(
+                    $_FILES["fond"]["tmp_name"], $this->getParameter('fond_competitions') . "/" . $fileName
+                );
+                $competion->setFond($fileName);
+             }
             $competion->setStatus($request->get('status'));
             if(!empty($request->get('content'))){
                 $competion->setContent($request->get('content'));
@@ -132,6 +152,37 @@ class CompetionsController extends Controller
         }
 
         return $this->redirectToRoute('admin_competitions_index');
+    }
+    
+    /**
+     * Deletes logo competition
+     *
+     * @Route("/delete-logo/{id}", name="admin_competition_logo")
+     * @Method("POST")
+     */
+    public function deletelogoAction(Request $request, Competions $competion)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $competion->setLogo(null);
+        $em->persist($competion);
+        $em->flush();
+
+        return new JsonResponse(array('message' => 'logo deleted'));
+    }
+    /**
+     * Delete fond competition
+     *
+     * @Route("/delete-fond/{id}", name="admin_competition_fond")
+     * @Method("POST")
+     */
+    public function deletefondAction(Request $request, Competions $competion)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $competion->setFond(null);
+        $em->persist($competion);
+        $em->flush();
+
+        return new JsonResponse(array('message' => 'fond deleted'));
     }
 
     /**

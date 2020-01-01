@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Competions
 {
+    const IS_CONFEDRATION = 1;
+    const IS_LIGUE = 2;
+    
     /**
      * @var int
      *
@@ -40,6 +43,34 @@ class Competions
      * @ORM\Column(name="content", type="text", nullable=true)
      */
     private $content;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="logo", type="string", length=255, nullable=true)
+     */
+    private $logo;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="font", type="string", length=255, nullable=true)
+     */
+    private $fond;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contentClassement", type="text", nullable=true)
+     */
+    private $contentClassement;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="integer", nullable=true)
+     */
+    private $status;
 
 
     /**
@@ -89,7 +120,31 @@ class Competions
 
         return $this;
     }
+    
+    /**
+     * Get contentClassement
+     *
+     * @return string
+     */
+    public function getContentClassement()
+    {
+        return $this->contentClassement;
+    }
+    
+    /**
+     * Set contentClassement
+     *
+     * @param string $contentClassement
+     *
+     * @return Competions
+     */
+    public function setContentClassement($contentClassement)
+    {
+        $this->contentClassement = $contentClassement;
 
+        return $this;
+    }
+    
     /**
      * Get content
      *
@@ -99,5 +154,75 @@ class Competions
     {
         return $this->content;
     }
-}
+    
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
 
+    /**
+     * Set status
+     *
+     * @param string $status
+     *
+     * @return Competions
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->levels = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add level
+     *
+     * @param \BackBundle\Entity\Levels $level
+     *
+     * @return Competions
+     */
+    public function addLevel(\BackBundle\Entity\Levels $level)
+    {
+        $this->levels[] = $level;
+
+        return $this;
+    }
+
+    /**
+     * Remove level
+     *
+     * @param \BackBundle\Entity\Levels $level
+     */
+    public function removeLevel(\BackBundle\Entity\Levels $level)
+    {
+        $this->levels->removeElement($level);
+    }
+
+    /**
+     * Get levels
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLevels()
+    {
+        return $this->levels;
+    }
+    
+    public function __toString() {
+        return $this->getTitle();
+    }
+}

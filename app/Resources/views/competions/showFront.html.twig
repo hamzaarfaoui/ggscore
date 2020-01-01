@@ -1,6 +1,18 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
     <style>
+        .content-page{
+            position: absolute;
+            width: 100%;
+        }
+        .uk-container{
+            position: relative;
+            width: 72%;
+            padding: 10%;
+            left: 0;
+            top: 150px;
+            background-color: white;
+        }
         .level-linkk{
             width: 50%;
         }
@@ -29,6 +41,9 @@
             width: 50%;
         }
         @media screen and (max-width: 400px){
+            .uk-container{
+                top: 50px;
+            }
             .competition-desc{
                 width: 100%;
                 margin-left: 0;
