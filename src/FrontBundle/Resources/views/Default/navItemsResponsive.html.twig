@@ -1,19 +1,19 @@
-<li class="uk-open">
-    <a href="#" class='uk-accordion-title'>دوري الأبطال</a>
+<li>
+    <a href="#" class='uk-accordion-title' style="font-size: 14px;text-align: right;">دوري الأبطال</a>
     <div class="uk-accordion-content">
         <ul class="uk-list uk-list-divider">
             {% for competition in competitions %}
-                <li><a href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay uk-text-right">{{ competition.title }}</a></li>
+                <li style="text-align: right;"><a style="font-size: 12px;" href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay uk-text-right">{{ competition.title }}</a></li>
             {% endfor %}
         </ul>
     </div>
 </li>
 <li>
-    <a  class="uk-accordion-title" href="#">دوريات محلية</a>
+    <a  class="uk-accordion-title" href="#" style="font-size: 14px;text-align: right;">دوريات محلية</a>
     <div class="uk-accordion-content">
         <ul class="uk-list uk-list-divider">
             {% for competition in ligues %}
-                <li><a href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay uk-text-right">{{ competition.title }}</a></li>
+                <li style="text-align: right;"><a style="font-size: 12px;text-align: right;" href="{{ path('competitions_show', {id:competition.id}) }}" class="text-overlay uk-text-right">{{ competition.title }}</a></li>
             {% endfor %}
         </ul>
     </div>

@@ -32,11 +32,14 @@ class DefaultController extends Controller
     /**
      * Finds and displays a post entity.
      *
-     * @Route("/posts/{id}", name="front_posts_show")
+     * @Route("/posts", name="front_posts_show")
      * @Method("GET")
      */
-    public function showArticleAction(Posts $post)
+    public function showArticleAction(Request $request)
     {
+        $id = $request->get('id');
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository('BackBundle:Posts')->find($id);
         return $this->render('posts/showInFront.html.twig', array(
             'post' => $post,
         ));

@@ -13,7 +13,7 @@
     <div id="menu-mobile" uk-offcanvas="mode: push; overlay: true;flip: true">
         <div class="uk-offcanvas-bar">
             <button class="uk-offcanvas-close" type="button" uk-close></button>
-            <ul uk-accordion>
+            <ul uk-accordion style="margin-top: 49px;">
                 {{ render(controller(
                         'FrontBundle:Default:competitionsResponsive'
                     )) }}
@@ -23,6 +23,7 @@
 <!-- Menu desktop -->
 <nav class="uk-navbar uk-navbar-container uk-box-shadow-medium uk-visible@l" id="menu" uk-navbar style="position: relative; z-index: 980;background-color: #212121;height: 50px;">
     <div class="uk-navbar-center">
+        <a href="https://www.facebook.com/gghighlights2019" target="_blank" uk-icon="icon: facebook" style="color: #FFF;background-color: #4267b2;padding: 5px;border-radius: 5px;"></a>
         <a href="/" class="uk-navbar-item uk-logo"><a href="{{ path('front_homepage') }}"><img src="{{ asset('ggs.png') }}" /></a></a>
         <ul class="uk-navbar-nav">
             {{ render(controller(
