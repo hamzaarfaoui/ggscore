@@ -3,7 +3,7 @@
     <style>
         .content-page{
             position: absolute;
-            background-image: url('/uploads/competitions/fond/{{competion.fond}}');
+            {#background-image: url('/web/uploads/competitions/fond/{{competion.fond}}');#}
             width: 100%;
             background-size: cover;
             height: 100%;
@@ -13,13 +13,12 @@
         .uk-container{
             position: relative;
             width: 58%;
-            padding: 10%;
+            padding: 0 10%;
             left: 0;
-            top: 150px;
+            top: 100px;
             background-color: white;
             border-radius: 34px;
             height: 67%;
-            overflow: auto;
         }
         .level-linkk{
             width: 50%;
@@ -50,11 +49,16 @@
             width: 50%;
         }
         .logo-competition {
-            width: 83px;
-            height: 92px;
-            margin-right: 46%;
-            margin-top: -76px;
-           margin-bottom: 5%;
+            {% if(competion.status == 1) %}
+                width: 83px;
+                height: 92px;
+                {% else %}
+                width: 92px;
+                height: 92px;
+                {% endif %}
+            margin-right: 32%;
+            margin-top: 0;
+            margin-bottom: 5%;
             margin-left: 44%;
         }
         @media screen and (max-width: 400px){
@@ -73,17 +77,33 @@
                 width: 100%;
             }
             .logo-competition {
-                width: 70px;
-                height: 85px;
-                margin-right: 33%;
-                margin-top: 0;
-                margin-bottom: 11%;
+                {% if(competion.status == 1) %}
+                width: 83px;
+                height: 92px;
+                {% else %}
+                width: 92px;
+                height: 92px;
+                {% endif %}
+                margin-right: 32%;
+                margin-top: 5px;
+                margin-bottom: 5%;
+                margin-left: 44%;
+            }
+            .level-link {
+                border: 1px solid #0f6ecd;
+                background-color: #0f6ecd;
+                padding: 10px;
+                color: #FFF;
+                font-size: 16px;
+                width: 100%;
+                margin-right: -5%;
+                /* margin-left: 23%; */
             }
         }
     </style>
 {% endblock %}
 {% block body %}
-    <img src="{{ asset('uploads/competitions/logos/') }}{{competion.logo}}" class="logo-competition">
+    <img src="{{ asset('uploads/competitions/logos/') }}{{competion.logo}}" class="logo-competition" >
     {% if(competion.status == 1) %}
         <div class="uk-child-width-1-1@m" uk-grid>
             <div class="uk-inline uk-margin">

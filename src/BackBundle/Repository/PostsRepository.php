@@ -12,7 +12,7 @@ class PostsRepository extends \Doctrine\ORM\EntityRepository
 {
     public function inIndex() {
         $qb = $this->createQueryBuilder('u');
-        $qb->select('u')->orderBy('u.createdAt', 'DESC')->setMaxResults(6);
+        $qb->select('u')->orderBy('u.createdAt', 'DESC')->setMaxResults(12);
         return $qb->getQuery()->getResult();
     }
     public function inSlider() {

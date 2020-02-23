@@ -13,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Post controller.
  *
- * @Route("admin/posts")
+ * @Route("ggh-hh/posts")
  */
 class PostsController extends Controller
 {

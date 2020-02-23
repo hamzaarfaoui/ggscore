@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Competion controller.
  *
- * @Route("admin/competitions")
+ * @Route("ggh-hh/competitions")
  */
 class CompetionsController extends Controller
 {
@@ -47,6 +47,7 @@ class CompetionsController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $competion->setStatus($request->get('status'));
+            $competion->setRegion($request->get('region'));
             if(!empty($request->get('content'))){
                 $competion->setContent($request->get('content'));
             }
@@ -116,6 +117,7 @@ class CompetionsController extends Controller
                 $competion->setFond($fileName);
              }
             $competion->setStatus($request->get('status'));
+            $competion->setRegion($request->get('region'));
             if(!empty($request->get('content'))){
                 $competion->setContent($request->get('content'));
             }

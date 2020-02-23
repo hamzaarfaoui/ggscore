@@ -71,6 +71,13 @@ class Competions
      * @ORM\Column(name="status", type="integer", nullable=true)
      */
     private $status;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="region", type="string", nullable=true)
+     */
+    private $region;
 
 
     /**
@@ -272,5 +279,29 @@ class Competions
     public function getFond()
     {
         return $this->fond;
+    }
+
+    /**
+     * Set region
+     *
+     * @param string $region
+     *
+     * @return Competions
+     */
+    public function setRegion($region)
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * Get region
+     *
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->region;
     }
 }

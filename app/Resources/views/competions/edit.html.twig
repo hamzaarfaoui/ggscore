@@ -12,28 +12,34 @@
             <label><input class="uk-radio" type="radio" name="status" {{ competion.status !=2?'checked':'' }} value="1"> Conféderation</label>
             <label><input class="uk-radio" type="radio" name="status" {{ competion.status ==2?'checked':'' }} value="2"> Ligue</label>
         </div>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-radio" id="confedration" type="radio" name="region" {{ competion.status !='eu'?'checked':'' }} value="ar"> Arabe</label>
+            <label><input class="uk-radio" id="ligue" type="radio" name="region" {{ competion.status =='eu'?'checked':'' }} value="eu"> Europe</label>
+        </div>
         <div class="uk-margin">
             <p>Logo</p>
             <div class="file-loading">
                 <input id="kv-explorer" class="file" type="file" name="logo">
             </div>
         </div>
-        <div class="uk-margin">
+        {#<div class="uk-margin">
             <p>Fond d'écran</p>
             <div class="file-loading">
                 <input id="file-3" class="file" type="file" name="fond">
             </div>
-        </div>
+        </div>#}
+        {% if(competion.status==2) %}
         <div class="uk-child-width-1-2 uk-text-center" uk-grid>
             <div>
                 <b>Journée</b>
-                <textarea name="content" class="ckeditor"></textarea>
+                <textarea name="content" class="ckeditor">{{competion.content}}</textarea>
             </div>
             <div>
                 <b>Classement</b>
-                <textarea name="contentClassement" class="ckeditor"></textarea>
+                <textarea name="contentClassement" class="ckeditor">{{competion.contentClassement}}</textarea>
             </div>
         </div>
+        {% endif %}
         <div class="uk-margin" style="margin-bottom: 60px;">
         <input class="btn btn-primary" type="submit" value="Enregistrer" />
         </div>

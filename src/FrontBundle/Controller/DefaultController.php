@@ -21,12 +21,17 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $session = $request->getSession();
-        
-        
         $em = $this->getDoctrine()->getManager();
         $postsInSlider = $em->getRepository('BackBundle:Posts')->inSlider();
         $posts = $em->getRepository('BackBundle:Posts')->inIndex();
-        return $this->render('@Front/Default/index.html.twig', array('posts' => $posts,'postsInSlider' => $postsInSlider));
+        $competitionAr = $em->getRepository('BackBundle:Competions')->findBy(array('region' => 'ar'));
+        $competitionEu = $em->getRepository('BackBundle:Competions')->findBy(array('region' => 'eu'));
+        return $this->render('@Front/Default/index.html.twig', array(
+            'posts' => $posts,
+            'postsInSlider' => $postsInSlider,
+            'competitionAr' => $competitionAr,
+            'competitionEu' => $competitionEu
+                ));
     }
     
     /**

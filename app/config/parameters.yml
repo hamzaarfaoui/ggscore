@@ -1,5 +1,16 @@
 # This file is auto-generated during the composer install
 parameters:
+    #database_host: gghighligyggh.mysql.db
+    #database_port: 3306
+    #database_name: gghighligyggh
+    #database_user: gghighligyggh
+    #database_password: Ag00zohrago
+    #mailer_transport: smtp
+    #mailer_host: 92.222.139.190
+    #mailer_user: contact@gghighlights.tn
+    #mailer_password: Ag00zohrago
+    #secret: ThisTokenIsNotSoSecretChangeIt
+
     database_host: 127.0.0.1
     database_port: null
     database_name: soccer_db
